@@ -14,3 +14,4 @@ echo "Connected successfully";
 mysqli_close($conn);
 ?>
 <?php $servername = "localhost"; $database = "databasename"; $username = "username"; $password = "password"; ?>
+
