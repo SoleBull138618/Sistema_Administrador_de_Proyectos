@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <title>ola</title>
+    </head>
+    <body>
+         <!-- Menú lateral izquierdo  -->
+          <!-- <div id="sidebar" class="sidebar">
+             <ul class="menu">
+                 <li>Administrar Usuarios.</li>
+                <li><a href="#">Ver Proyectos.</a></li>
+                 <li><a href="#">Ver Estadisticas.</a></li>
+              </ul> -->
+           </div>
+           <div class="contenedor1">
+                <form class="formulario1">
+                   <h1 class="titulo">Subir archivos.</h1>
+                   <div id="ausuarios" class="ausuarios">
+                        <div class="nomproyecto">
+                            <label>Nombre del Proyecto:</label><br>
+                            <input
+                                type="text"
+                                required
+                                >
+                        </div>
+                        <div class="tipoarc">
+                            <label>Tipo de Archivo:</label><br>
+                            <input type="radio" 
+                                name="rol" 
+                                checked
+                                value="1"> Arquitectura<br>
+                                <input type="radio"
+                                name="rol"
+                                value="2"> Cronograma<br>
+                                <input type="radio"
+                                name="rol"
+                                value="3"> Manual
+                        </div>
+                        <div class="subirarc"> 
+                            <!-- <label>Selecciona el archivo:</label> -->
+                            <input type="file"
+                                required>
+                            <!-- <fieldset><legend>Selecciona el archivo.</legend>
+                                <input type="file"
+                                required>
+                            </fieldset> -->
+                        </div> 
+
+                        <input type="submit" value="Agregar Archivo">
+                        
+

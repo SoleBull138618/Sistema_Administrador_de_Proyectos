@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <title>ola</title>
+    </head>
+    <body>
+         <!-- Menú lateral izquierdo  -->
+          <div id="sidebar" class="sidebar">
+             <ul class="menu">
+                 <li>Administrar Usuarios.</li>
+                <li><a href="#">Ver Proyectos.</a></li>
+                 <li><a href="#">Ver Estadisticas.</a></li>
+              </ul>
+           </div>
+           <div class="contenedor1">
+                <form class="formulario">
+                   <h1 class="titulo">Alta de Proyectos.</h1>
+                   <div id="ausuarios" class="ausuarios">
+                        <div class="nomproyecto">
+                            <label>Nombre del Proyecto: </label><br>
+                            <input
+                                type="text"
+                                required
+                                >
+                        </div>
+                        <div class="fechaalta">
+                            <label>Fecha de Alta:</label><br>
+                            <input
+                                type="date"
+                                required
+                            >
+                        </div>
+                        <div class="origenpeti">
+                            <label>Origen de la petición:</label><br>
+                            <select name="Origenpetición.">
+                                <option value="1">Centralizador</option>
+                                <option value="2">Interno</option>
+                                <option value="3">PMO</option>
+                            </select>
+                        </div>
+                        <div class="servicio">
+                            <label>Servicio:</label><br>
+                            <select name="servicio.">
+                                <option value="1">800 Coppel</option>
+                                <option value="2">BanCoppel</option>
+                                <option value="3">Afore</option>
+                                <option value="4">Garantías</option>
+                                <option value="5">General</option>
+                            </select>
+                        </div>
+                        <div class="descripcion">
+                            <label>Descripción del Proyecto: </label><br>
+                            <input
+                                type="text"
+                                required
+                                >
+                        </div>
+                        <div class="tipo">
+                            <label>Tipo de Proyecto:</label><br>
+                            <select name="servicio.">
+                                <option value="1">800 Coppel</option>
+                                <option value="2">BanCoppel</option>
+                                <option value="3">Afore</option>
+                                <option value="4">Garantías</option>
+                                <option value="5">General</option>
+                            </select>
+                        </div>
+                        <div class="clasificacion">
+                            <label>Clasificacion del Proyecto:</label><br>
+                            <select name="clasipro">
+                                <option value="1">Express</option>
+                                <option value="2">Complejo</option>
+                                <option value="3">Medio</option>
+                                <option value="4">Macro</option>
+                            </select>
+                        </div>
+                        <div class="peticion">
+                            <label>Hay petición:</label><br>
+                            <select name="haypeti">
+                                <option value="1">Si</option>
+                                <option value="2">No</option>
+                                <option value="3">Interno</option>
+                            </select>
+                        </div>
+                        <div class="arquitecto">
+                            <label>Arquitecto:</label><br>
+                            <select name="arqui">
+                                <option value="1">Sofía Vaca</option>
+                                <option value="2">Lidia Peñuelas</option>
+                            </select>
+                        </div>
+                        <div class="programador">
+                            <label>Programador:</label><br>
+                            <select name="arqui">
+                                <option value="1">Marco Martinez</option>
+                                <option value="2">Omar Lizarraga</option>
+                                <option value="3">Daniela Lopez</option>
+                            </select>
+                        </div>
+                        <div class="fcompromiso">
+                            <label>Fecha Compromiso:</label><br>
+                            <input
+                                type="date"
+                                required
+                            >
+                        </div>
+                        <input type="submit" value="Agregar Proyecto">
+                        <input type="submit" value="Editar Proyecto">
+                   </div>
+    </body>
+</html>
