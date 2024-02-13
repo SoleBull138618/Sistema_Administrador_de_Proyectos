@@ -7,7 +7,7 @@
     </head>
     <body>
         <div class="contenedor">
-            <form class="formulario" method="post">
+            <form class="formulario" method="post" action="../conexiones.php">
                 <h1 class="titulo">Administrador de usuarios.</h1>
                 <div id="ausuarios" class="ausuarios">
                     <div class="nombre">
@@ -16,7 +16,7 @@
                             type="text"
                             required
                             maxlength="100"
-                            name="nombre_cliente"
+                            name="registrarnombre"
                         >
                     </div>
                     <div class="numempleado">
@@ -25,7 +25,7 @@
                             type="number"
                             required
                             onkeydown="if(this.value.length==8) return false"
-                            name="numero_empleado"
+                            name="registrarempleado"
                         >
                     </div>
                     <div class="rol">
@@ -41,7 +41,7 @@
                         name="rol"
                         value="3"> Programador
                     </div>
-                    <input type="submit" value="Agregar usuario" name="añadir">
+                    <input type="submit" value="Agregar usuario" name="registro">
                 </div>
             </form>
         </div>
