@@ -22,7 +22,7 @@ function verProyecto(){
             newSrc = 'views/estadisticas.html'
             break;
         default:
-            console.log('chale')
+            console.log('chale.')
             break;
     }
 
