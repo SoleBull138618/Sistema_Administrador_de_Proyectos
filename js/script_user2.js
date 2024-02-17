@@ -19,7 +19,7 @@ function verProyecto(){
 
     switch (elementValue){
         case 'Subir Proyectos':
-            newSrc = 'views/new_proyect.html'
+            newSrc = 'views/alta_proyecto.html'
             break;
         case 'Editar Proyectos':
             newSrc = 'views/editar_proyecto.html'
@@ -28,7 +28,7 @@ function verProyecto(){
             newSrc = 'views/agregar_archivos.html'
             break;
         case 'Proyectos':
-            newSrc = 'views/proyectos.html'
+            newSrc = 'views/ver_proyecto.html'
             break;
         case 'Estadisticas':
             newSrc = 'views/estadisticas.html'
