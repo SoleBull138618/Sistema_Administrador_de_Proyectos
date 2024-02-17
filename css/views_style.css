@@ -111,3 +111,13 @@ input[type = number]::-webkit-outer-spin-button
     -webkit-appearance: none;
     margin: 0;
 }
+
+.subirarc {
+    color: aliceblue;
+}
+
+input[type = file]{
+    /* border: 2px solid; */
+    border: 2px dashed;
+    border-radius: 15px;
+}
