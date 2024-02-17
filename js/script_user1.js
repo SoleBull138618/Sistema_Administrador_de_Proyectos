@@ -18,13 +18,13 @@ function verProyecto(){
 
     switch (elementValue){
         case 'Proyectos':
-            newSrc = 'views/proyectos.html'
+            newSrc = 'views/ver_proyecto.html'
             break;
         case 'Estadisticas':
             newSrc = 'views/estadisticas.html'
             break;
         case 'Agregar Usuarios':
-            newSrc = 'views/usuarios.html'
+            newSrc = 'views/agregar_usuarios.html'
             break;
         case 'Modificar Usuarios':
             newSrc = 'views/modificar_usuarios.html'
