@@ -2,14 +2,14 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="../style.css">	
+        <link rel="stylesheet" type="text/css" href="../css/views_style.css">	
         <title>Ola</title>
     </head>
     <body>
-        <div class="contenedor1">
-            <form class="formulario1" method="post" action="../conexiones.php">
+        <div class="contenedor">
+            <form class="formulario" method="post" action="../php/conexiones.php">
                 <h1 class="titulo">Administrador de usuarios.</h1>
-                <div id="ausuarios" class="ausuarios">
+                <div id="usuarios" class="usuarios">
                     <div class="nombre">
                         <label>Nombre del colaborador:</label><br>
                         <input
@@ -41,6 +41,13 @@
                         name="rol"
                         value="3"> Programador
                     </div>
+                    <div class="contra">
+                        <label>Contraseña:</label><br>
+                        <input
+                            type="text"
+                            required
+                            name="contra"
+                        >
                     <input type="submit" value="Agregar Usuario" name="registro">
                 </div>
             </form>
