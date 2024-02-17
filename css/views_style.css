@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: #1A5276;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.contenedor {
+    margin-top: 2rem;
+}
+
+.formulario {
+    margin-top: 20px;
+    color: white;
+    height: auto;
+    width: 450px;
+    background-color: #35AACF;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 7px 10px #154360;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo {
+    letter-spacing: 1px;
+}
+
+.campos input {
+    width: 100%;
+    padding: 15px 10px;
+    border-radius: 7px;
+    border: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    position: relative;
+    font-size: 18px;
+
+    transition: 400ms ease;
+}
+
+input:not(input[type="submit"]):focus {
+    background-color: #B4D0EA;
+    outline: 2px solid #154360;
+    outline-offset: 2px;
+}
+
+input[type="submit"] {
+    color: #1A5276;
+    font-size: 18px;
+    background-color: #B4D0EA;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    /* margin-top: 30px; */
+}
+
+input[type="submit"]:hover {
+    color:white;
+    background-color: #154360;
+}
+
+input[type="text"] {
+    width: 350px;
+}
+
+.usuarios {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 1.5rem ;
+    text-align: left;
+    font-size: 19px;
+}
+
+.usuarios input {
+    padding: 8px;
+    border-radius: 7px;
+    border: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    position: relative;
+    font-size: 15px;
+}
+
+/* Son los menús desplegables */
+.cubito{
+    padding: 8px;
+    border-radius: 7px;
+    border: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    position: relative;
+    font-size: 15px;
+}
+
+/* Quitar flechas del input number */
+input[type = number]::-webkit-inner-spin-button,
+input[type = number]::-webkit-outer-spin-button
+{
+    -webkit-appearance: none;
+    margin: 0;
+}
