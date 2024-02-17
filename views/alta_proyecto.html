@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="Last-Modified" content="0">
+        <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="../style.css">
+        <link rel="stylesheet" type="text/css" href="../css/views_style.css">
         <title>ola</title>
     </head>
     <body>
-           <div class="contenedor1">
-                <form class="formulario1">
+           <div class="contenedor">
+                <form class="formulario" method="POST" action="../php/funciones.php">
                    <h1 class="titulo">Alta de Proyectos.</h1>
-                   <div id="ausuarios" class="ausuarios">
+                   <div id="usuarios" class="usuarios">
                         <div class="nomproyecto">
                             <label>Nombre del Proyecto: </label><br>
                             <input
                                 type="text"
                                 required
+                                name="nombreproyecto"
                                 >
                         </div>
                         <div class="fechaalta">
@@ -22,24 +28,25 @@
                             <input
                                 type="date"
                                 required
+                                name="fecha_alta"
                             >
                         </div>
                         <div class="origenpeti">
                             <label>Origen de la petición:</label><br>
-                            <select name="Origenpetición." class="cubito">
-                                <option value="1">Centralizador</option>
-                                <option value="2">Interno</option>
-                                <option value="3">PMO</option>
+                            <select name="origenpeticion" class="cubito">
+                                <option value="Centralizador">Centralizador</option>
+                                <option value="Interno">Interno</option>
+                                <option value="PMO">PMO</option>
                             </select>
                         </div>
                         <div class="servicio">
                             <label>Servicio:</label><br>
-                            <select name="servicio." class="cubito">
-                                <option value="1">800 Coppel</option>
-                                <option value="2">BanCoppel</option>
-                                <option value="3">Afore</option>
-                                <option value="4">Garantías</option>
-                                <option value="5">General</option>
+                            <select name="servicio" class="cubito">
+                                <option value="800 Coppel">800 Coppel</option>
+                                <option value="BanCoppel">BanCoppel</option>
+                                <option value="Afore">Afore</option>
+                                <option value="Garantias">Garantías</option>
+                                <option value="General">General</option>
                             </select>
                         </div>
                         <div class="descripcion">
@@ -47,48 +54,49 @@
                             <input
                                 type="text"
                                 required
+                                name="descripcion"
                                 >
                         </div>
                         <div class="tipo">
                             <label>Tipo de Proyecto:</label><br>
-                            <select name="servicio." class="cubito">
-                                <option value="1">800 Coppel</option>
-                                <option value="2">BanCoppel</option>
-                                <option value="3">Afore</option>
-                                <option value="4">Garantías</option>
-                                <option value="5">General</option>
+                            <select name="tipo_proyecto" class="cubito">
+                                <option value="800 Coppel">800 Coppel</option>
+                                <option value="BanCoppel">BanCoppel</option>
+                                <option value="Afore">Afore</option>
+                                <option value="Garantias">Garantías</option>
+                                <option value="General">General</option>
                             </select>
                         </div>
                         <div class="clasificacion">
                             <label>Clasificacion del Proyecto:</label><br>
                             <select name="clasipro" class="cubito">
-                                <option value="1">Express</option>
-                                <option value="2">Complejo</option>
-                                <option value="3">Medio</option>
-                                <option value="4">Macro</option>
+                                <option value="Express">Express</option>
+                                <option value="Complejo">Complejo</option>
+                                <option value="Medio">Medio</option>
+                                <option value="Macro">Macro</option>
                             </select>
                         </div>
                         <div class="peticion">
                             <label>Hay petición:</label><br>
                             <select name="haypeti" class="cubito">
-                                <option value="1">Si</option>
-                                <option value="2">No</option>
-                                <option value="3">Interno</option>
+                                <option value="Si">Sí</option>
+                                <option value="No">No</option>
+                                <option value="Interno">Interno</option>
                             </select>
                         </div>
                         <div class="arquitecto">
                             <label>Arquitecto:</label><br>
                             <select name="arqui" class="cubito">
-                                <option value="1">Sofía Vaca</option>
-                                <option value="2">Lidia Peñuelas</option>
+                                <option value="Sofia Vaca">Sofía Vaca</option>
+                                <option value="Lidia Peñuelas">Lidia Peñuelas</option>
                             </select>
                         </div>
                         <div class="programador">
                             <label>Programador:</label><br>
-                            <select name="arqui" class="cubito">
-                                <option value="1">Marco Martinez</option>
-                                <option value="2">Omar Lizarraga</option>
-                                <option value="3">Daniela Lopez</option>
+                            <select name="desarrollador" class="cubito">
+                                <option value="Marco Martinez">Marco Martinez</option>
+                                <option value="Omar Lizarraga">Omar Lizarraga</option>
+                                <option value="Daniela Lopez">Daniela Lopez</option>
                             </select>
                         </div>
                         <div class="fcompromiso">
@@ -96,10 +104,10 @@
                             <input
                                 type="date"
                                 required
+                                name="fecha_compromiso"
                             >
                         </div>
-                        <input type="submit" value="Agregar Proyecto">
-                        <!-- <input type="submit" value="Editar Proyecto"> -->
+                        <input type="submit" value="Agregar Proyecto" name="agregar_proyecto">
                    </div>
     </body>
 </html>
