@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../css/views_style.css">	
+        <title>Ola</title>
+    </head>
+    <body>
+        <div class="contenedor">
+            <form class="formulario" method="POST" action="../php/funciones.php">
+                <h1 class="titulo">Modificar Usuarios</h1>
+                <div id="usuarios" class="usuarios">
+                    <div class="tablilla">
+                        <table border="1">
+                            <tr>
+                                <td>empleado</td>
+                                <td>nombre</td>
+                                <td>rol</td>
+                                <td>clave</td>
+                            </tr>
+                            
+                            <!-- <?php
+                            $sql = "SELECT * FROM users";
+                            $result = mysqli_query($conn,$sql);
+
+                            while($mostrar = mysqli_fetch_array($result)){
+                                ?> -->
+
+                            <tr>
+                                <td><?php echo $mostrar['empleado'] ?></td>
+                                <td><?php echo $mostrar['nombre'] ?></td>
+                                <td><?php echo $mostrar['rol'] ?></td>
+                                <td><?php echo $mostrar['clave'] ?></td>
+                            </tr>
+                             <!-- <?php
+                             }
+                                ?> -->
+
+
+                        </table>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
