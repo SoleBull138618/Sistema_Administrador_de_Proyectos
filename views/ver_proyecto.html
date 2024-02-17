@@ -2,15 +2,15 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="../style.css">	
+        <link rel="stylesheet" type="text/css" href="../css/views_style.css">	
         <title>Ola</title>
     </head>
     <body>
-        <div class="contenedor1">
-            <form class="formulario1">
-                <div id="ausuarios" class="ausuarios">
+        <div class="contenedor">
+            <form class="formulario" method="POST" action="../php/funciones.php">
+                <h1 class="titulo">Proyectos registrados.</h1>
+                <div id="usuarios" class="usuarios">
                     <div class="tablilla">
-                        <h1>Proyectos registrados.</h1> <br>
                         <table border="1">
                             <tr>
                                 <th>#</th>
@@ -18,22 +18,15 @@
                                 <th></th>
                             </tr>
                             <tr>
-                                <td>1</td>
-                                <td>Sistema administrador de proyectos.</td>
-                                <td><input type="submit"
-                                    value="Ver más."></td>
-                            </tr>
-                            <tr>
                                 <td>2</td>
                                 <td>Sistema de portafolio.</td>
                                 <td><input type="submit"
                                     value="Ver más."></td>
-                            </tr>
+                            </tr> 
                         </table>
                     </div>
                 </div>
             </form>
         </div>
-
     </body>
 </html>
