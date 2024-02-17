@@ -8,12 +8,12 @@
     // Evento para guardar el alta de los usuarios. 
     if(isset($_POST['registro'])){
 
-        $empleado= $_POST ['registrarempleado'];
         $nombre= $_POST ['registrarnombre'];
+        $empleado= $_POST ['registrarempleado'];
         $rol= $_POST ['rol'];
         $clave= $_POST ['contra'];
 
-        $insertarDatos = "INSERT INTO users VALUES ('$empleado','$nombre','$rol','$clave')";
+        $insertarDatos = "INSERT INTO users VALUES ('$nombre','$empleado','$rol','$clave')";
 
         $ejecutarInsertar = mysqli_query ($conn,$insertarDatos);
     }
