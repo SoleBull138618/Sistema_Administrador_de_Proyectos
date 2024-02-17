@@ -16,7 +16,7 @@ function verProyecto(){
 
     switch (elementValue){
         case 'Proyectos':
-            newSrc = 'views/proyectos.html'
+            newSrc = 'views/ver_proyecto.html'
             break;
         case 'Estadisticas':
             newSrc = 'views/estadisticas.html'
