@@ -1,11 +1,13 @@
 <?php
-$servername = "127.0.0.1";
-$database = "practicas";
-$username = "root";
-$password = "";
+//Función para nuestra conexión. 
+function conexion_bd(){
+    $servername = "127.0.0.1";
+    $database = "practicas";
+    $username = "root";
+    $password = "";
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $database);?>
+    $conn = mysqli_connect($servername, $username, $password, $database);
+        
 
-<?php $servername = "localhost"; $database = "databasename"; $username = "username"; $password = "password"; ?>
-
+    return $conn;
+}
