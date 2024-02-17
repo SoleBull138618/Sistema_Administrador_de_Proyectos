@@ -60,20 +60,20 @@ form {
     transition: 400ms ease;
 }
 
-#ayudita{
-    position: sticky;
-    height: 24px;
-    width: 24px;
-    top: 203px;
-    right: 51px;
-}
-
-.campos i {
+.i {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 15px;
-    color: rgba(128,128,128,0.600);
+    right: -26px;
+    /* color: rgba(128,128,128,0.600); */
+}
+
+.i_user {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -26px;
+    /* color: rgba(128,128,128,0.600); */
 }
 
 input:not(input[type="submit"]):focus {

@@ -2,11 +2,14 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="style.css">	
+        <link rel="stylesheet" type="text/css" href="css/indexStyle.css">	
         <title>Ola</title>
+
+        <!-- <script src="script.js"></script> -->
+
     </head>
     <body>
-<!-- Login -->
+        <!-- Login -->
         <div class="contenedor">
             <form class="formulario">
                 <h1 class="titulo">Bienvenido</h1>
@@ -14,10 +17,11 @@
                     <div class="campo__usuarios">
                         <input
                             type="number"
-                            placeholder="Empleado"
+                            placeholder="N° Empleado"
                             required
                             onkeydown="if(this.value.length==8) return false"
                         >
+                        <i class='bx bxs-user-circle' ></i>
                     </div>
                     <div class="campo__contraseña">
                         <input
@@ -26,10 +30,14 @@
                             required
                             maxlength="15"
                         >
-                    </div>
+                        <i class="fa-solid fa-lock"></i>
+                    </div> 
                     <input type="submit" value="Login">
                 </div>
+
             </form>
-        </div>     
+       
+        
+
     </body>
 </html>
