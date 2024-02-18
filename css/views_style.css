@@ -49,6 +49,14 @@ body {
     transition: 400ms ease;
 }
 
+.i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -26px;
+    /* color: rgba(128,128,128,0.600); */
+}
+
 input:not(input[type="submit"]):focus {
     background-color: #B4D0EA;
     outline: 2px solid #154360;
