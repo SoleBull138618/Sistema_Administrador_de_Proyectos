@@ -49,12 +49,12 @@ body {
     transition: 400ms ease;
 }
 
-.i {
+/* .i {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
     right: -26px;
-}
+} */
 
 input:not(input[type="submit"]):focus {
     background-color: #B4D0EA;
