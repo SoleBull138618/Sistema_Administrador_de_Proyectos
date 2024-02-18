@@ -50,11 +50,10 @@ body {
 }
 
 .i {
-    position: absolute;
+    position: fixed;
     top: 50%;
     transform: translateY(-50%);
     right: -26px;
-    /* color: rgba(128,128,128,0.600); */
 }
 
 input:not(input[type="submit"]):focus {
