@@ -33,7 +33,7 @@
         $desarrollador= $_POST ['desarrollador'];
         $compromiso= $_POST ['fecha_compromiso'];
 
-        $insertarDatos = "INSERT INTO proyectos VALUES ('','$proyecto','$fechaalta','$origen_peticion','$servicio','$descripcion','$tipo_proyecto','$clasificacion','$peticion','$arquitecto','$desarrollador','$compromiso')";
+        $insertarDatos1 = "INSERT INTO proyectos VALUES ('','$proyecto','$fechaalta','$origen_peticion','$servicio','$descripcion','$tipo_proyecto','$clasificacion','$peticion','$arquitecto','$desarrollador','$compromiso')";
 
-        $ejecutarInsertar = mysqli_query ($conn,$insertarDatos);
+        $ejecutarInsertar = mysqli_query ($conn,$insertarDatos1);
     }
