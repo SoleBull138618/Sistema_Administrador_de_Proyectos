@@ -7,8 +7,6 @@ function eventListeners(){
     document.getElementById('btnRegistrarUsuarios').addEventListener('click',registrarUsuarios);
 }
 
-console.log($('#registrar_nombre').val())
-
 function registrarUsuarios(){
 
     let form_data = new FormData();
@@ -17,6 +15,8 @@ function registrarUsuarios(){
     form_data.append('registrarempleado',$('#registrar_empleado').val());
     form_data.append('rol',$('#rol').val());
     form_data.append('contra',$('#contra').val());
+
+    console.log('loritos')
 
     $.ajax({
         type: 'POST',
@@ -27,6 +27,9 @@ function registrarUsuarios(){
         contentType: false,
         success: function(respuesta) {
             console.log('Se registro el usuario.')
+        },
+        error: function(xhr, status, error){
+            console.log(error)
         }
     })
 

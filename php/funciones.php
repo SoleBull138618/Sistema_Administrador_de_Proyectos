@@ -37,9 +37,17 @@
         $rol= $_POST ['rol'];
         $clave= $_POST ['contra'];
 
+        $estado = false;
+
         $insertarDatos = "INSERT INTO users VALUES ('$nombre','$empleado','$rol','$clave')";
 
         $ejecutarInsertar = mysqli_query ($conn,$insertarDatos);
+
+        $estado = true;
+
+        mysqli_close($conn);
+        $salidaJSON = array('estado' => $estado);
+        print json_encode($salidaJSON);
     }
 
     // Evento para guardar el alta de los nuevos proyectos.
