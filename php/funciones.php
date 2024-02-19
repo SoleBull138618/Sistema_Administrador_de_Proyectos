@@ -5,6 +5,23 @@
     // Declaramos la conexión al servidor como variable global. 
     $conn = conexion_bd();
 
+    $opc = $_POST['opc'];
+
+    switch($opc){
+        case 'info_tabla_usuarios':
+            info_tabla_usuarios();
+            break;
+        case 'panfilo':
+            pruebaInfo();
+            break;
+    }
+
+    function pruebaInfo(){
+
+        echo "perrito";
+
+    }
+
     // Evento para guardar el alta de los usuarios. 
     if(isset($_POST['registro'])){
 
@@ -36,7 +53,7 @@
         $insertarDatos1 = "INSERT INTO proyectos_historica VALUES ('','$fecha_registro','$origen_peticion','$servicio','$proyecto','$descripcion','$tipo_proyecto','$clasificacion','$peticion','$arquitecto','$programador','','','','$fecha_compromiso','','')";
         $ejecutarInsertar = mysqli_query ($conn,$insertarDatos1);
     }
-    
+
     function info_tabla_usuarios(){
 
         global $conn;
