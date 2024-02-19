@@ -36,3 +36,33 @@
         $insertarDatos1 = "INSERT INTO proyectos_historica VALUES ('','$fecha_registro','$origen_peticion','$servicio','$proyecto','$descripcion','$tipo_proyecto','$clasificacion','$peticion','$arquitecto','$programador','','','','$fecha_compromiso','','')";
         $ejecutarInsertar = mysqli_query ($conn,$insertarDatos1);
     }
+    
+    function info_tabla_usuarios(){
+
+        global $conn;
+        $query = "SELECT empleado, nombre, rol, clave FROM users;";
+        $html_info = '';
+        $estado = false;
+        
+
+        if($result = mysqli_query($conn, $query)){
+
+            while ($row = mysqli_fetch_assoc($result)){
+
+                $html_info .= "<tr>";
+                $html_info .= "<td>{$row["empleado"]}</td>";
+                $html_info .= "<td>{$row["nombre"]}</td>";
+                $html_info .= "<td>{$row["rol"]}</td>";
+                $html_info .= "<td>{$row["clave"]}</td>";
+                $html_info .= "</tr>";
+            }
+
+            $estado = true;
+        }
+
+        mysqli_close($conn);
+        $salidaJSON = array('info_empleado' => $html_info, 'estado' => $estado);
+        print json_encode($salidaJSON);
+
+    }
+            
