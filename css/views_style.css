@@ -20,7 +20,8 @@ body {
     margin-top: 20px;
     color: white;
     height: auto;
-    width: auto;
+    width: 1200px;
+    overflow-x: scroll;
     background-color: #35AACF;
     padding: 30px;
     text-align: center;
