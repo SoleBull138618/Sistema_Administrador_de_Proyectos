@@ -129,3 +129,27 @@ input[type = file]{
     border: 2px dashed;
     border-radius: 15px;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 5px;
+    table-layout: auto;
+}
+
+tr:first-child {
+    background-color: rgb(6, 62, 118);
+    font-weight: bolder;
+  }
+
+th{    
+    border: 2px solid rgb(0, 0, 0);
+    text-align: center;
+    padding: 15px;
+}
+
+td {
+    border: 2px solid rgb(0, 0, 0);
+    text-align: left;
+    padding: 15px;
+  }
