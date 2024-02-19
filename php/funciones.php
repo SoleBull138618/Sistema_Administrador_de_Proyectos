@@ -11,8 +11,11 @@
         case 'info_tabla_usuarios':
             info_tabla_usuarios();
             break;
-        case 'panfilo':
-            pruebaInfo();
+        case 'guardar_usuarios':
+            guardar_usuarios();
+            break;
+        case 'guardar_proyectos':
+            guardar_usuarios();
             break;
     }
 
@@ -23,8 +26,9 @@
     }
 
     // Evento para guardar el alta de los usuarios. 
-    if(isset($_POST['registro'])){
+    function guardar_usuarios(){
 
+        global $conn;
         $nombre= $_POST ['registrarnombre'];
         $empleado= $_POST ['registrarempleado'];
         $rol= $_POST ['rol'];
@@ -36,8 +40,9 @@
     }
 
     // Evento para guardar el alta de los nuevos proyectos.
-    if(isset($_POST['agregar_proyecto'])){
+    function guardar_proyectos(){
 
+        global $conn;
         $fecha_registro= $_POST ['fecha_alta'];
         $origen_peticion= $_POST ['origenpeticion'];
         $servicio= $_POST ['servicio'];
@@ -53,6 +58,8 @@
         $insertarDatos1 = "INSERT INTO proyectos_historica VALUES ('','$fecha_registro','$origen_peticion','$servicio','$proyecto','$descripcion','$tipo_proyecto','$clasificacion','$peticion','$arquitecto','$programador','','','','$fecha_compromiso','','')";
         $ejecutarInsertar = mysqli_query ($conn,$insertarDatos1);
     }
+    
+    // if(isset($_POST['agregar_proyecto'])){
 
     function info_tabla_usuarios(){
 
@@ -81,5 +88,4 @@
         $salidaJSON = array('info_empleado' => $html_info, 'estado' => $estado);
         print json_encode($salidaJSON);
 
-    }
-            
+    }          
