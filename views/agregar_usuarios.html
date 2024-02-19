@@ -15,40 +15,43 @@
                     <div class="nombre">
                         <label>Nombre del colaborador:</label><br>
                         <input
+                            id="registrar_nombre"
                             type="text"
                             required
                             maxlength="100"
-                            name="registrarnombre"
                         >
                     </div>
                     <div class="numempleado">
                         <label>Número de empleado:</label><br>
                         <input
+                            id="registrar_empleado"
                             type="number"
                             required
                             onkeydown="if(this.value.length==8) return false"
-                            name="registrarempleado"
                         >
                     </div>
                     <div class="rol">
                         <label>Tipo de rol:</label><br>
                         <input type="radio" 
+                        id="rol"
                         name="rol" 
                         checked
                         value="1"> Administrador<br>
                         <input type="radio"
+                        id="rol"
                         name="rol"
                         value="2"> Arquitecto<br>
                         <input type="radio"
+                        id="rol"
                         name="rol"
                         value="3"> Programador
                     </div>
                     <div class="contra">
                         <label>Contraseña:</label><br>
                         <input
+                            id="contra"
                             type="text"
                             required
-                            name="contra"
                         >
                     <input id="btnRegistrarUsuarios" type="submit" value="Agregar Usuario" name="registro">
                 </div>
