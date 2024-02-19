@@ -4,7 +4,7 @@ form_data.append('opc','info_tabla_usuarios');
 
 $.ajax({
     type: 'POST',
-    url: '../funciones.php',
+    url: '../php/funciones.php',
     // data: {opc: "info_tabla_usuarios"},
     data: form_data,
     dataType: 'json',
