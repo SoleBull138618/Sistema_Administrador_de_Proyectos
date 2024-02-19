@@ -130,6 +130,7 @@ input[type = file]{
     border-radius: 15px;
 }
 
+/* Estilos de las tablas */
 table {
     width: 100%;
     border-collapse: collapse;
