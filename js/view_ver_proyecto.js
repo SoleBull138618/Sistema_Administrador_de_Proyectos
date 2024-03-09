@@ -89,14 +89,14 @@ function fnLlenaId(id){
 function ActualizarComentario(id){
 
     // union_comentario = old_comentarios + '|' + update_comentarios;
-    id = id.substring('project_'.length);
+    // id = id.substring('project_'.length);
 
     let form_data = new FormData();
     form_data.append('opc','actualizar_comentario_proyecto');
     form_data.append('update_avance_actual',$('#update_avance_actual').val());
     form_data.append('update_comentarios',$('#update_comentarios').val());
     form_data.append('old_comentarios',$('#old_comentarios').val());
-    form_data.append('id',id);
+    form_data.append('id',$('#ver_id_proyecto').val());
 
     $.ajax({
         type: 'POST',
