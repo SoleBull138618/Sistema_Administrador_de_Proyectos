@@ -157,9 +157,14 @@
 
             while ($row = mysqli_fetch_assoc($result)){
 
-                $html_info .= "<tr>";
-                $html_info .= "<td>{$row["comentarios"]}</td>";
-                $html_info .= "</tr>";
+                $allComentarios = explode('|', $row['comentarios']);
+
+                foreach ($allComentarios as $newRow) {
+                    $html_info .= "<tr>";
+                    $html_info .= "<td>{$newRow}</td>";
+                    $html_info .= "</tr>";
+                }
+
             }
             
             $estado = true;

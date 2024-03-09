@@ -84,6 +84,7 @@
             </div>
         </div>
         <dialog id="modal" method="POST" action="../php/funciones.php">
+            <input id="hiddenId" type="hidden">
             <h1 class="titulo_modal">Actualizar proyecto 
                 <table id="ver_id_proyecto" class="titulo_modal">
                 </table>
@@ -122,7 +123,7 @@
                     >
             </div>
             <button class="btnEditarUsuarios" id="btnActualizarComentario">Guardar</button>
-            <button class="btnCerrarUsuarios" onclick="window.modal.close();">Cerrar</button>
+            <button class="btnCerrarUsuarios" id="btnCerrarUsuarios" onclick="window.modal.close();">Cerrar</button>
         </dialog>
     </body>
 </html>

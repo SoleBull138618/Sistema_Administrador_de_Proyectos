@@ -14,8 +14,13 @@ function eventListeners(){
         if(this.value == 'Editar'){
             console.log('Esta editandome')
 
-            fnLlenaComentarios(parentRow.id) //Manda a llenar #update_comentarios
-            fnLlenaId(parentRow.id) //Manda a llenar #id
+
+            
+            let id = parentRow.id.substring('project_'.length);
+
+            fnLlenaComentarios(id) //Manda a llenar #update_comentarios
+            fnLlenaId(id) //Manda a llenar #id
+            $('#hiddenId').val(id); //Agregamos el id oculto a la ventana modal
 
             window.modal.showModal();
         }
@@ -25,6 +30,10 @@ function eventListeners(){
             $(parentRow).hide()
         }
 
+    });
+
+    document.getElementById('btnCerrarUsuarios').addEventListener('click',function(){
+        $('#hiddenId').val(); //Eliminamos el id oculto a la ventana modal
     });
 
     // Boton para actualizar el nuevo comentario en la bd.
@@ -53,8 +62,6 @@ function llenaTablaVerProyectos(){
 }
 
 function fnLlenaComentarios(id){
-    console.log(id)
-    id = id.substring('project_'.length);
 
     let form_data = new FormData();
     form_data.append('opc','comentario_old_tabla_proyectos');
@@ -81,8 +88,6 @@ function fnLlenaComentarios(id){
 
 function fnLlenaId(id){
 
-    id = id.substring('project_'.length);
-
     $("#ver_id_proyecto").html(id);
 }
 
@@ -91,12 +96,21 @@ function ActualizarComentario(id){
     // union_comentario = old_comentarios + '|' + update_comentarios;
     // id = id.substring('project_'.length);
 
+    let old_comentario =  '';
+
+    $('#old_comentarios td').each(function(i, e){
+        old_comentario += e.textContent + '|';
+    });
+
+    old_comentario = old_comentario.substring(0, old_comentario.length-1); //Quitamos el ultimo pipe
+    
+
     let form_data = new FormData();
     form_data.append('opc','actualizar_comentario_proyecto');
     form_data.append('update_avance_actual',$('#update_avance_actual').val());
     form_data.append('update_comentarios',$('#update_comentarios').val());
-    form_data.append('old_comentarios',$('#old_comentarios').val());
-    form_data.append('id',$('#ver_id_proyecto').val());
+    form_data.append('old_comentarios', old_comentario);
+    form_data.append('id',$('#hiddenId').val());
 
     $.ajax({
         type: 'POST',
