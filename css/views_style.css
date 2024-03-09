@@ -12,11 +12,12 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-.contenedor {
+.contenedor{
     margin-top: 2rem;
 }
 
-.formulario {
+.formulario,
+.fondo {
     margin-top: 20px;
     color: white;
     height: auto;
@@ -91,7 +92,11 @@ input[type="text"] {
     font-size: 19px;
 }
 
-.usuarios input {
+.usuarios input,
+.btnEditarUsuarios,
+.btnCerrarUsuarios,
+.btnFiltrarUsuarios,
+.btnEliminarUsuarios {
     padding: 8px;
     border-radius: 7px;
     border: none;
@@ -109,6 +114,17 @@ input[type="text"] {
     outline: 2px solid transparent;
     outline-offset: 2px;
     position: relative;
+    font-size: 15px;
+}
+
+/* Menú desplegable del modal*/
+.cubito1{
+    padding: 8px;
+    border-radius: 7px;
+    border: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    position: sticky;
     font-size: 15px;
 }
 
@@ -131,7 +147,7 @@ input[type = file]{
 }
 
 /* Estilos de las tablas */
-table {
+table.tablilla {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 5px;
@@ -141,7 +157,7 @@ table {
 tr:first-child {
     background-color: rgb(6, 62, 118);
     font-weight: bolder;
-  }
+}
 
 th{    
     border: 2px solid rgb(0, 0, 0);
@@ -149,8 +165,94 @@ th{
     padding: 15px;
 }
 
-td {
+td{
     border: 2px solid rgb(0, 0, 0);
     text-align: left;
     padding: 15px;
+}
+
+.btnEditarUsuarios,
+.btnCerrarUsuarios,
+.btnEliminarUsuarios{
+    width: 70px;
+    height: 35px;
+    margin-top: 5px;
+}
+
+.btnFiltrarUsuarios{
+    width: 68px;
+    height: 36px;
+    margin-top: 32px;
+    margin-left: 11px;
+}
+
+.btnEditarUsuarios:hover,
+.btnFiltrarUsuarios:hover{
+    color: white;
+    background-color: rgb(162, 0, 255);
+}
+
+.btnCerrarUsuarios:hover,
+.btnEliminarUsuarios:hover{
+    color: white;
+    background-color: rgb(255, 0, 0);
+}
+
+.filtros_superior{
+    display: flex;
+    flex-wrap: wrap;
+    /* padding: 15px; */
+    /* margin: 10px; */
+    /* border: 2px solid #000102; */
+    border-radius: 15px;
+    /* box-shadow: 0px 0px 7px 1px #0a1f2c; */
+}
+
+.servicio,
+.estatus,
+.programador,
+.fechaalta{
+    margin: 10px;
+}
+
+.estatus1,
+.avance_actual1,
+.comentarios1,
+.comentarios_old,
+.btnEditarUsuarios{
+    margin: 18px;
+    margin-top: 0px;
+}
+
+.btnEliminarUsuarios{
+    margin: 6px;
+    margin-top: 0px;
+}
+
+dialog::backdrop {
+    background: rgba(160, 184, 236, 0.651);
   }
+
+dialog#modal{
+    left: 35%;
+    top: 25%;
+    background-color: #5daae9;
+    border-radius: 15px;
+    border: 2px solid rgb(0, 67, 250);
+}
+
+.titulo_modal{
+    letter-spacing: 1px;
+    padding: 14px;
+    color: white;
+    margin-bottom: 0px;
+}
+
+.modal_titulos{
+    color: white;
+}
+
+/* h2{
+    
+} */
+
