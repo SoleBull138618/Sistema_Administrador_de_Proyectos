@@ -1,3 +1,17 @@
+<?php
+
+include 'php/databaseconnect.php';
+session_start();
+
+if (!isset($_SESSION['user_id']) || 
+    strtoupper($_SESSION['user_type']) != '3') {
+    header('Location: index.php');
+    exit;
+} else {
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,8 +24,11 @@
     <body>
         <!-- Menú superior -->
         <div id="barra_sup" class="barra_sup">
-            <input id="btnCloseSession" type="button" value="Cerrar Sesión" class="arribita">
-            <input id="btnNotification" type="button" value="Notificaciones" class="arribita">
+            <form action='destruir_sesion.php'>
+                <input class="arribita" type="submit" name="sesionDestroy" value="Cerrar sesion"/>
+            </form>
+            <!-- <input id="btnCloseSession" type="button" value="Cerrar Sesión" class="arribita"> -->
+            <!-- <input id="btnNotification" type="button" value="Notificaciones" class="arribita"> -->
         </div> 
 
         <!-- Menú lateral izquierdo  -->
