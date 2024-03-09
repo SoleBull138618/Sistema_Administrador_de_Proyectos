@@ -4,15 +4,121 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../css/views_style.css">	
         <title>Ola</title>
+        <script src="../js/jquery-1.10.2.js"></script>
+        <script src="../js/view_ver_proyecto.js"></script>
     </head>
     <body>
         <div class="contenedor">
-            <form class="formulario" method="POST" action="../php/funciones.php">
-                <h1 class="titulo">Agregar usuarios.</h1>
+            <div class="fondo" method="POST" action="../php/funciones.php">
+                <h1 class="titulo">Proyectos registrados.</h1>
                 <div id="usuarios" class="usuarios">
+                    <div class="filtros_superior">
+                        <div class="servicio">
+                            <label>Servicio:</label><br>
+                            <select class="cubito1" id="filtro_servicio">
+                                <option value="todo">Todo</option>
+                                <option value="800 Coppel">800 Coppel</option>
+                                <option value="BanCoppel">BanCoppel</option>
+                                <option value="Afore">Afore</option>
+                                <option value="Garantias">Garantías</option>
+                                <option value="General">General</option>
+                            </select>
+                        </div>
+                        <div class="estatus">
+                            <label>Estatus:</label><br>
+                            <select class="cubito1" id="filtro_estatus">
+                                <option value="todo">Todo</option>
+                                <option value="cancelado">Cancelado</option>
+                                <option value="detenido">Detenido</option>
+                                <option value="En Espera VO.BO">En Espera VO.BO</option>
+                                <option value="En Proceso">En Proceso</option>
+                                <option value="Fase de Pruebas">Fase de Pruebas</option>
+                                <option value="Finalizado">Finalizado</option>
+                                <option value="Sin Asignar">Sin Asignar</option>
 
-
-            </form>
-         </div>
+                            </select>
+                        </div>
+                        <div class="programador">
+                            <label>Programador:</label><br>
+                            <select class="cubito1" id="filtro_programador">
+                                <option value="todo">Todos</option>
+                                <option value="Marco Martinez">Marco Martinez</option>
+                                <option value="Omar Lizarraga">Omar Lizarraga</option>
+                                <option value="Daniela Lopez">Daniela Lopez</option>
+                            </select>
+                        </div>
+                        <div class="fechaalta">
+                            <label>Fecha de Alta:</label><br>
+                            <input
+                                id="filtro_fecha_de_alta"
+                                type="date"
+                            >
+                        </div>
+                        <button class="btnFiltrarUsuarios">Filtrar</button>
+                    </div>
+                    <div class="tablilla">
+                        <table border="1" id="tabla_proyectos">
+                            <tr>
+                                <th>Id</th>
+                                <th>Nombre del proyecto</th>
+                                <th>Fecha Alta</th>
+                                <th>Origen Petición</th>
+                                <th>Servicio</th>
+                                <th>Descripción</th>
+                                <th>Tipo Proyecto</th>
+                                <th>Clasificación</th>
+                                <th>¿Hay Petición?</th>
+                                <th>Arquitecto</th>
+                                <th>Programador</th>
+                                <th>Fecha Final</th>
+                                <th>Avance Actual</th>
+                                <th>Estatus</th>
+                                <th>Fecha Compromiso</th>
+                                <th>Comentarios</th>
+                                <th>Ultima Actualización</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <dialog id="modal" method="POST" action="../php/funciones.php">
+            <h1 class="titulo_modal">Actualizar proyecto 
+                <table id="ver_id_proyecto" class="titulo_modal">
+                </table>
+            </h1>
+            <div class="avance_actual1">
+                <label class="modal_titulos">Avance Actual:</label><br>
+                <select class="cubito1" id="update_avance_actual">
+                    <option value="0">0%</option>
+                    <option value="10">10%</option>
+                    <option value="20">20%</option>
+                    <option value="30">30%</option>
+                    <option value="40">40%</option>
+                    <option value="50">50%</option>
+                    <option value="60">60%</option>
+                    <option value="70">70%</option>
+                    <option value="80">80%</option>
+                    <option value="90">90%</option>
+                    <option value="100">100%</option>
+                </select>
+            </div>
+            <div class="comentarios_old">
+                <label class="modal_titulos">Comentarios anteriores: </label><br>
+                    <table id="old_comentarios"  class="tabla_comentario_viejo">
+                    </table>
+            </div>
+            <div class="comentarios1">
+                <label class="modal_titulos">Nuevo comentario: </label><br>
+                <input
+                    class="cubito1"
+                    id="update_comentarios"
+                    type="text"
+                    >
+            </div>
+            <button class="btnEditarUsuarios" id="btnActualizarComentario">Guardar</button>
+            <button class="btnCerrarUsuarios" onclick="window.modal.close();">Cerrar</button>
+        </dialog>
     </body>
 </html>
