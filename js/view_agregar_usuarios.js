@@ -5,6 +5,8 @@ window.addEventListener('load', eventListeners);
 function eventListeners(){
 
     document.getElementById('btnRegistrarUsuarios').addEventListener('click',registrarUsuarios);
+    document.getElementById('btnBorrarUsuarios').addEventListener('click',)
+
 }
 
 function registrarUsuarios(){
@@ -13,7 +15,7 @@ function registrarUsuarios(){
     form_data.append('opc','guardar_usuarios');
     form_data.append('registrarnombre',$('#registrar_nombre').val());
     form_data.append('registrarempleado',$('#registrar_empleado').val());
-    form_data.append('rol',$('#rol').val());
+    form_data.append('rol',$('[name=rol]:checked').val());
     form_data.append('contra',$('#contra').val());
 
     console.log('loritos')
@@ -33,4 +35,7 @@ function registrarUsuarios(){
         }
     })
 
+}
+
+function borrarUsuarios(){
 }
