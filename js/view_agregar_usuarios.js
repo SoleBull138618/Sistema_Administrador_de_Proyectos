@@ -5,7 +5,7 @@ window.addEventListener('load', eventListeners);
 function eventListeners(){
 
     document.getElementById('btnRegistrarUsuarios').addEventListener('click',registrarUsuarios);
-    document.getElementById('btnBorrarUsuarios').addEventListener('click',)
+    // document.getElementById('btnBorrarUsuarios').addEventListener('click',)
 
 }
 
@@ -37,5 +37,5 @@ function registrarUsuarios(){
 
 }
 
-function borrarUsuarios(){
-}
+// function borrarUsuarios(){
+// }
