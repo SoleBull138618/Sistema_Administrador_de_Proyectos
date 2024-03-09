@@ -180,15 +180,15 @@
 
         global $conn;
         
-        // $new_comentario = $old_comentarios.'|'.$update_comentarios;
+        $new_comentario = $old_comentarios.'|'.$update_comentarios;
 
-        $insertarDatos = "UPDATE proyectos_historica SET avance_actual='$update_avance_actual',comentarios='$update_comentarios' WHERE id_proyecto='$id'";
+        $insertarDatos = "UPDATE proyectos_historica SET avance_actual='$update_avance_actual',comentarios='$new_comentario' WHERE id_proyecto='$id'";
 
         $ejecutarInsertar = mysqli_query ($conn,$insertarDatos);
 
-        // $estado = true;
+        $estado = true;
 
-        // mysqli_close($conn);
-        // $salidaJSON = array('estado' => $estado);
-        // print json_encode($salidaJSON);
+        mysqli_close($conn);
+        $salidaJSON = array('estado' => $estado);
+        print json_encode($salidaJSON);
     }      
