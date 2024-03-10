@@ -39,6 +39,8 @@ function eventListeners(){
     // Boton para actualizar el nuevo comentario en la bd.
     document.getElementById('btnActualizarComentario').addEventListener('click',ActualizarComentario);
 
+    document.getElementById('btnFiltrarUsuarios').addEventListener('click',FiltrarProyectos);
+
 }
 
 function llenaTablaVerProyectos(){
@@ -55,7 +57,7 @@ function llenaTablaVerProyectos(){
         processData: false,
         contentType: false,
         success: function(respuesta) {
-            $("#tabla_proyectos").append(respuesta.info_proyectos);
+            $("#tabla_proyectos tbody").append(respuesta.info_proyectos);
         }
     })
 
@@ -122,6 +124,56 @@ function ActualizarComentario(id){
         success: function(respuesta) {
             console.log('Se actualizo el comentario.')
             // console.log(old_comentarios)
+        },
+        error: function(xhr, status, error){
+            console.log(error)
+        }
+    })
+}
+
+function FiltrarProyectos(){
+
+    let filtrar_servicio = '';
+    let filtrar_estatus = '';
+    let filtrar_programador = '';
+
+    $('#filtro_servicio option').each(function(i, e){
+        filtrar_servicio += "'" + $(e).val() + "',";
+    });
+
+    filtrar_servicio = filtrar_servicio.substring(0,filtrar_servicio.length-1)
+
+    $('#filtro_estatus option').each(function(i, e){
+        filtrar_estatus += "'" + $(e).val() + "',";
+    });
+
+    filtrar_estatus = filtrar_estatus.substring(0,filtrar_estatus.length-1)
+
+    $('#filtro_programador option').each(function(i, e){
+        filtrar_programador += "'" + $(e).val() + "',";
+    });
+
+    filtrar_programador = filtrar_programador.substring(0,filtrar_programador.length-1)
+
+    filtrar_servicio = $('#filtro_servicio').val() ? "'" + $('#filtro_servicio').val() + "'" : filtrar_servicio;
+    filtrar_estatus = $('#filtro_estatus').val() ? "'" + $('#filtro_estatus').val() + "'" :filtrar_estatus;
+    filtrar_programador = $('#filtro_programador').val() ? "'" + $('#filtro_programador').val() + "'" :filtrar_programador;
+
+    let form_data = new FormData();
+    form_data.append('opc','FiltrarProyecto');
+    form_data.append('filtrar_servicio',filtrar_servicio);
+    form_data.append('filtrar_estatus',filtrar_estatus);
+    form_data.append('filtrar_programador', filtrar_programador);
+    
+    $.ajax({
+        type: 'POST',
+        url: '../php/funciones.php',
+        data: form_data,
+        dataType: 'json',
+        processData: false,
+        contentType: false,
+        success: function(respuesta) {
+            $("#tabla_proyectos tbody").html(respuesta.info_proyectos);
         },
         error: function(xhr, status, error){
             console.log(error)

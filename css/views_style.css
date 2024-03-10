@@ -154,7 +154,7 @@ table.tablilla {
     table-layout: auto;
 }
 
-tr:first-child {
+thead {
     background-color: rgb(6, 62, 118);
     font-weight: bolder;
 }

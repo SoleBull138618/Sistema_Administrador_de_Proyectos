@@ -25,6 +25,9 @@
              break;
         case 'actualizar_comentario_proyecto':
             actualizar_comentario_proyecto();
+        case 'FiltrarProyecto':
+            FiltrarProyecto();
+            break;
     }
 
     // Evento para guardar el alta de los usuarios. 
@@ -197,3 +200,50 @@
         $salidaJSON = array('estado' => $estado);
         print json_encode($salidaJSON);
     }      
+
+    function FiltrarProyecto(){
+
+        $filtrar_servicio = $_POST ['filtrar_servicio'];
+        $filtrar_estatus= $_POST ['filtrar_estatus'];
+        $filtrar_programador= $_POST ['filtrar_programador'];
+
+        global $conn;
+        $query = "SELECT id_proyecto, proyecto, fecha_registro, origen_peticion, servicio, descripcion, tipo_proyecto, clasificacion, peticion, arquitecto, programador, fecha_final, avance_actual,estatus,fecha_compromiso, comentarios, ultima_actualizacion FROM proyectos_historica WHERE servicio in($filtrar_servicio) and estatus in($filtrar_estatus) and programador in($filtrar_programador);";
+        $html_info = '';
+        $estado = false;
+        
+
+        if($result = mysqli_query($conn, $query)){
+
+            while ($row = mysqli_fetch_assoc($result)){
+
+                $html_info .= "<tr id='project_{$row['id_proyecto']}'>";
+                $html_info .= "<td>{$row["id_proyecto"]}</td>";
+                $html_info .= "<td>{$row["proyecto"]}</td>";
+                $html_info .= "<td>{$row["fecha_registro"]}</td>";
+                $html_info .= "<td>{$row["origen_peticion"]}</td>";
+                $html_info .= "<td>{$row["servicio"]}</td>";
+                $html_info .= "<td>{$row["descripcion"]}</td>";
+                $html_info .= "<td>{$row["tipo_proyecto"]}</td>";
+                $html_info .= "<td>{$row["clasificacion"]}</td>";
+                $html_info .= "<td>{$row["peticion"]}</td>";
+                $html_info .= "<td>{$row["arquitecto"]}</td>";
+                $html_info .= "<td>{$row["programador"]}</td>";
+                $html_info .= "<td>{$row["fecha_final"]}</td>";
+                $html_info .= "<td>{$row["avance_actual"]}</td>";
+                $html_info .= "<td>{$row["estatus"]}</td>";
+                $html_info .= "<td>{$row["fecha_compromiso"]}</td>";
+                $html_info .= "<td>{$row["comentarios"]}</td>";
+                $html_info .= "<td>{$row["ultima_actualizacion"]}</td>";
+                $html_info .= "<td data-manipulation-button='project_{$row['id_proyecto']}'><input type='button' value='Editar' class='btnEditarUsuarios'></td>";
+                $html_info .= "</tr>";
+            }
+            
+            $estado = true;
+        }
+
+        mysqli_close($conn);
+        $salidaJSON = array('info_proyectos' => $html_info, 'estado' => $estado);
+        print json_encode($salidaJSON);
+
+    }
