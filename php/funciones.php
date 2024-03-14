@@ -25,6 +25,7 @@
              break;
         case 'actualizar_comentario_proyecto':
             actualizar_comentario_proyecto();
+            break;
         case 'FiltrarProyecto':
             FiltrarProyecto();
             break;
@@ -66,8 +67,9 @@
         $arquitecto= $_POST ['arqui'];
         $programador= $_POST ['desarrollador'];
         $fecha_compromiso= $_POST ['fecha_compromiso'];
+        $comentario= $_POST ['comentarios'];
 
-        $insertarDatos1 = "INSERT INTO proyectos_historica VALUES ('','$fecha_registro','$origen_peticion','$servicio','$proyecto','$descripcion','$tipo_proyecto','$clasificacion','$peticion','$arquitecto','$programador','','','','$fecha_compromiso','')";
+        $insertarDatos1 = "INSERT INTO proyectos_historica VALUES ('','$fecha_registro','$origen_peticion','$servicio','$proyecto','$descripcion','$tipo_proyecto','$clasificacion','$peticion','$arquitecto','$programador','','','','$fecha_compromiso','$comentario')";
         $ejecutarInsertar = mysqli_query ($conn,$insertarDatos1);
     }
     
@@ -181,29 +183,6 @@
     // Evento para actualizar los proyectos del programardor o admin.
     function actualizar_comentario_proyecto(){
 
-        $update_avance_actual = $_POST ['update_avance_actual'];
-        $update_comentarios= $_POST ['update_comentarios'];
-        $old_comentarios= $_POST ['old_comentarios'];
-        $id= $_POST ['id'];
-
-        global $conn;
-        
-        $new_comentario = $old_comentarios.'|'.$update_comentarios;
-
-        $insertarDatos = "UPDATE proyectos_historica SET avance_actual='$update_avance_actual',comentarios='$new_comentario' WHERE id_proyecto='$id'";
-
-        $ejecutarInsertar = mysqli_query ($conn,$insertarDatos);
-
-        $estado = true;
-
-        mysqli_close($conn);
-        $salidaJSON = array('estado' => $estado);
-        print json_encode($salidaJSON);
-    }      
-
-    // Evento para actualizar los proyectos del arqui.
-    function actualizar_comentario_proyecto_arqui(){
-
         $alta_fecha_final = $_POST ['alta_fecha_final'];
         $update_avance_actual = $_POST ['update_avance_actual'];
         $estatus_update = $_POST ['estatus_update'];
@@ -225,7 +204,8 @@
         mysqli_close($conn);
         $salidaJSON = array('estado' => $estado);
         print json_encode($salidaJSON);
-    } 
+    }      
+
     function FiltrarProyecto(){
 
         $filtrar_servicio = $_POST ['filtrar_servicio'];

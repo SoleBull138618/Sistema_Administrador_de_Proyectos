@@ -9,6 +9,8 @@ function eventListeners(){
 
 function registrarProyectos(){
 
+    let comentarios = 'Se registro el proyecto'
+
     let form_data = new FormData();
     form_data.append('opc','guardar_proyectos');
     form_data.append('nombreproyecto',$('#alta_nomproyecto').val());
@@ -22,6 +24,7 @@ function registrarProyectos(){
     form_data.append('arqui',$('#alta_arqui').val());
     form_data.append('desarrollador',$('#alta_programador').val());
     form_data.append('fecha_compromiso',$('#alta_fecha_compromiso').val());
+    form_data.append('comentarios', comentarios);
 
     // console.log('loritos')
 

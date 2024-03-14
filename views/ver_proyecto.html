@@ -84,7 +84,19 @@
                     </table>
                 </h1>
             </div>
-            <div class="avance_actual1">
+            <div class="modulo_chiquito">
+                <label class="modal_titulos">Estatus:</label><br>
+                <select class="cubito1" id="estatus_update">
+                    <option value="cancelado">Cancelado</option>
+                    <option value="detenido">Detenido</option>
+                    <option value="En Espera VO.BO">En Espera VO.BO</option>
+                    <option value="En Proceso">En Proceso</option>
+                    <option value="Fase de Pruebas">Fase de Pruebas</option>
+                    <option value="Finalizado">Finalizado</option>
+                    <option value="Sin Asignar">Sin Asignar</option>
+                </select>
+            </div>
+            <div class="modulo_chiquito">
                 <label class="modal_titulos">Avance Actual:</label><br>
                 <select class="cubito1" id="update_avance_actual">
                     <option value="0">0%</option>
@@ -100,7 +112,7 @@
                     <option value="100">100%</option>
                 </select>
             </div>
-            <div class="comentarios_old">
+            <div class="modulo_chiquito">
                 <p class="modal_titulos">Comentarios anteriores:
                     <table id="old_comentarios"  class="tabla_comentario_viejo">
                     </table>
@@ -109,13 +121,31 @@
                     <table id="old_comentarios"  class="tabla_comentario_viejo">
                     </table> -->
             </div> 
-            <div class="comentarios1">
+            <div class="modulo_chiquito">
                 <label class="modal_titulos">Nuevo comentario: </label><br>
                 <input
                     class="cubito1"
                     id="update_comentarios"
                     type="text"
                     >
+            </div>
+            <div class="modulo_chiquito">
+                <label class="modal_titulos">Fecha Compromiso:</label><br>
+                <input
+                    class="cubito1"
+                    id="fecha_compromiso_update"
+                    type="date"
+                    name="fecha_compromiso"
+                    
+                >
+            </div>
+            <div class="modulo_chiquito">
+                <label class="modal_titulos">Fecha Final:</label><br>
+                <input
+                    class="cubito1"
+                    id="alta_fecha_final"
+                    type="date"
+                >
             </div>
             <button class="btnEditarUsuarios" id="btnActualizarComentario">Guardar</button>
             <button class="btnCerrarUsuarios" id="btnCerrarUsuarios" onclick="window.modal.close();">Cerrar</button>

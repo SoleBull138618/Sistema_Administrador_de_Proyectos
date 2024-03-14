@@ -5,7 +5,7 @@ window.addEventListener('load', eventListeners);
 function eventListeners(){
 
     document.getElementById('btnSubirProyectos').addEventListener('click',verProyecto);
-    document.getElementById('btnEditarProyectos').addEventListener('click',verProyecto);
+    document.getElementById('btnProyectos').addEventListener('click',verProyecto);
     document.getElementById('btnSubirArchivos').addEventListener('click',verProyecto);
     document.getElementById('btnProyectos').addEventListener('click',verProyecto);
     document.getElementById('btnEstadisticas').addEventListener('click',verProyecto);
@@ -21,8 +21,8 @@ function verProyecto(){
         case 'Subir Proyectos':
             newSrc = 'views/alta_proyecto.html'
             break;
-        case 'Editar Proyectos':
-            newSrc = 'views/editar_proyecto.html'
+        case 'Proyectos':
+            newSrc = 'views/ver_proyecto.html'
             break;
         case 'Subir Archivos':
             newSrc = 'views/agregar_archivos.html'
