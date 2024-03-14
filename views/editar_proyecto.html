@@ -16,7 +16,7 @@
                         <div class="servicio">
                             <label>Servicio:</label><br>
                             <select class="cubito1" id="filtro_servicio">
-                                <option value="todo">Todo</option>
+                                <option value="">Todo</option>
                                 <option value="800 Coppel">800 Coppel</option>
                                 <option value="BanCoppel">BanCoppel</option>
                                 <option value="Afore">Afore</option>
@@ -27,7 +27,7 @@
                         <div class="estatus">
                             <label>Estatus:</label><br>
                             <select class="cubito1" id="filtro_estatus">
-                                <option value="todo">Todo</option>
+                                <option value="">Todo</option>
                                 <option value="cancelado">Cancelado</option>
                                 <option value="detenido">Detenido</option>
                                 <option value="En Espera VO.BO">En Espera VO.BO</option>
@@ -41,24 +41,17 @@
                         <div class="programador">
                             <label>Programador:</label><br>
                             <select class="cubito1" id="filtro_programador">
-                                <option value="todo">Todos</option>
+                                <option value="">Todo</option>
                                 <option value="Marco Martinez">Marco Martinez</option>
                                 <option value="Omar Lizarraga">Omar Lizarraga</option>
                                 <option value="Daniela Lopez">Daniela Lopez</option>
                             </select>
                         </div>
-                        <div class="fechaalta">
-                            <label>Fecha de Alta:</label><br>
-                            <input
-                                id="filtro_fecha_de_alta"
-                                type="date"
-                            >
-                        </div>
-                        <button class="btnFiltrarUsuarios">Filtrar</button>
+                        <button id="btnFiltrarUsuarios" class="btnFiltrarUsuarios">Filtrar</button>
                     </div>
                     <div class="tablilla">
                         <table border="1" id="tabla_proyectos">
-                            <tr>
+                            <thead>
                                 <th>Id</th>
                                 <th>Nombre del proyecto</th>
                                 <th>Fecha Alta</th>
@@ -77,13 +70,15 @@
                                 <th>Comentarios</th>
                                 <th>Ultima Actualización</th>
                                 <th>Opciones</th>
-                            </tr>
+                            </thead>
+                            <tbody></tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
         <dialog id="modal" method="POST" action="../php/funciones.php">
+            <input id="hiddenId" type="hidden">
             <h1 class="titulo_modal">Actualizar proyecto 
                 <table id="ver_id_proyecto" class="titulo_modal">
                 </table>
@@ -105,10 +100,14 @@
                 </select>
             </div>
             <div class="comentarios_old">
-                <label class="modal_titulos">Comentarios anteriores: </label><br>
+                <p class="modal_titulos">Comentarios anteriores:
                     <table id="old_comentarios"  class="tabla_comentario_viejo">
                     </table>
-            </div>
+                </p>
+                <!-- <label class="modal_titulos">Comentarios anteriores: </label><br>
+                    <table id="old_comentarios"  class="tabla_comentario_viejo">
+                    </table> -->
+            </div> 
             <div class="comentarios1">
                 <label class="modal_titulos">Nuevo comentario: </label><br>
                 <input
@@ -118,7 +117,7 @@
                     >
             </div>
             <button class="btnEditarUsuarios" id="btnActualizarComentario">Guardar</button>
-            <button class="btnCerrarUsuarios" onclick="window.modal.close();">Cerrar</button>
+            <button class="btnCerrarUsuarios" id="btnCerrarUsuarios" onclick="window.modal.close();">Cerrar</button>
         </dialog>
     </body>
 </html>
