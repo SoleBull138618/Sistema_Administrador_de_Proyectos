@@ -67,7 +67,7 @@
         $programador= $_POST ['desarrollador'];
         $fecha_compromiso= $_POST ['fecha_compromiso'];
 
-        $insertarDatos1 = "INSERT INTO proyectos_historica VALUES ('','$fecha_registro','$origen_peticion','$servicio','$proyecto','$descripcion','$tipo_proyecto','$clasificacion','$peticion','$arquitecto','$programador','','','','$fecha_compromiso','','')";
+        $insertarDatos1 = "INSERT INTO proyectos_historica VALUES ('','$fecha_registro','$origen_peticion','$servicio','$proyecto','$descripcion','$tipo_proyecto','$clasificacion','$peticion','$arquitecto','$programador','','','','$fecha_compromiso','')";
         $ejecutarInsertar = mysqli_query ($conn,$insertarDatos1);
     }
     
@@ -106,7 +106,7 @@
     function info_tabla_proyectos(){
 
         global $conn;
-        $query = "SELECT id_proyecto, proyecto, fecha_registro, origen_peticion, servicio, descripcion, tipo_proyecto, clasificacion, peticion, arquitecto, programador, fecha_final, avance_actual,estatus,fecha_compromiso, comentarios, ultima_actualizacion FROM proyectos_historica;";
+        $query = "SELECT id_proyecto, proyecto, fecha_registro, origen_peticion, servicio, descripcion, tipo_proyecto, clasificacion, peticion, arquitecto, programador, fecha_final, avance_actual,estatus,fecha_compromiso, comentarios FROM proyectos_historica;";
         $html_info = '';
         $estado = false;
         
@@ -132,7 +132,6 @@
                 $html_info .= "<td>{$row["estatus"]}</td>";
                 $html_info .= "<td>{$row["fecha_compromiso"]}</td>";
                 $html_info .= "<td>{$row["comentarios"]}</td>";
-                $html_info .= "<td>{$row["ultima_actualizacion"]}</td>";
                 $html_info .= "<td data-manipulation-button='project_{$row['id_proyecto']}'><input type='button' value='Editar' class='btnEditarUsuarios'></td>";
                 $html_info .= "</tr>";
             }
@@ -208,7 +207,7 @@
         $filtrar_programador= $_POST ['filtrar_programador'];
 
         global $conn;
-        $query = "SELECT id_proyecto, proyecto, fecha_registro, origen_peticion, servicio, descripcion, tipo_proyecto, clasificacion, peticion, arquitecto, programador, fecha_final, avance_actual,estatus,fecha_compromiso, comentarios, ultima_actualizacion FROM proyectos_historica WHERE servicio in($filtrar_servicio) and estatus in($filtrar_estatus) and programador in($filtrar_programador);";
+        $query = "SELECT id_proyecto, proyecto, fecha_registro, origen_peticion, servicio, descripcion, tipo_proyecto, clasificacion, peticion, arquitecto, programador, fecha_final, avance_actual,estatus,fecha_compromiso, comentarios FROM proyectos_historica WHERE servicio in($filtrar_servicio) and estatus in($filtrar_estatus) and programador in($filtrar_programador);";
         $html_info = '';
         $estado = false;
         
@@ -234,7 +233,6 @@
                 $html_info .= "<td>{$row["estatus"]}</td>";
                 $html_info .= "<td>{$row["fecha_compromiso"]}</td>";
                 $html_info .= "<td>{$row["comentarios"]}</td>";
-                $html_info .= "<td>{$row["ultima_actualizacion"]}</td>";
                 $html_info .= "<td data-manipulation-button='project_{$row['id_proyecto']}'><input type='button' value='Editar' class='btnEditarUsuarios'></td>";
                 $html_info .= "</tr>";
             }
