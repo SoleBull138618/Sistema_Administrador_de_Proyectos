@@ -42,7 +42,6 @@ if (!isset($_SESSION['user_id']) ||
                 <input id="btnSubirProyectos" type="button" value="Subir Proyectos" class="menu">
                 <input id="btnEditarProyectos" type="button" value="Editar Proyectos" class="menu">
                 <input id="btnSubirArchivos" type="button" value="Subir Archivos" class="menu">
-                <input id="btnProyectos" type="button" value="Proyectos" class="menu">
                 <input id="btnEstadisticas" type="button" value="Estadisticas" class="menu">
             </div>
     

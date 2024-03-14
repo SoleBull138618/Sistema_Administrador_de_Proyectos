@@ -35,7 +35,6 @@
                                 <option value="Fase de Pruebas">Fase de Pruebas</option>
                                 <option value="Finalizado">Finalizado</option>
                                 <option value="Sin Asignar">Sin Asignar</option>
-
                             </select>
                         </div>
                         <div class="programador">
@@ -78,11 +77,22 @@
         </div>
         <dialog id="modal" method="POST" action="../php/funciones.php">
             <input id="hiddenId" type="hidden">
-            <h1 class="titulo_modal">Actualizar proyecto 
-                <table id="ver_id_proyecto" class="titulo_modal">
-                </table>
-            </h1>
-            <div class="avance_actual1">
+            <div class="titulo_modal_externo">
+                <h1 class="titulo_modal">Actualizar proyecto  
+                    <table id="ver_id_proyecto" class="titulo_modal">
+                    </table>
+                </h1>
+            </div>
+            <div class="modulo_chiquito">
+                <label class="modal_titulos">Fecha Final:</label><br>
+                <input
+                    class="cubito1"
+                    id="alta_fecha_final"
+                    type="date"
+                    required
+                >
+            </div>
+            <div class="modulo_chiquito">
                 <label class="modal_titulos">Avance Actual:</label><br>
                 <select class="cubito1" id="update_avance_actual">
                     <option value="0">0%</option>
@@ -98,16 +108,35 @@
                     <option value="100">100%</option>
                 </select>
             </div>
-            <div class="comentarios_old">
+            <div class="modulo_chiquito">
+                <label class="modal_titulos">Estatus:</label><br>
+                <select class="cubito1" id="estatus_update">
+                    <option value="cancelado">Cancelado</option>
+                    <option value="detenido">Detenido</option>
+                    <option value="En Espera VO.BO">En Espera VO.BO</option>
+                    <option value="En Proceso">En Proceso</option>
+                    <option value="Fase de Pruebas">Fase de Pruebas</option>
+                    <option value="Finalizado">Finalizado</option>
+                    <option value="Sin Asignar">Sin Asignar</option>
+                </select>
+            </div>
+            <div class="modulo_chiquito">
+                <label class="modal_titulos">Fecha Compromiso:</label><br>
+                <input
+                    class="cubito1"
+                    id="fecha_compromiso_update"
+                    type="date"
+                    required
+                    name="fecha_compromiso"
+                >
+            </div>
+            <div class="modulo_chiquito">
                 <p class="modal_titulos">Comentarios anteriores:
                     <table id="old_comentarios"  class="tabla_comentario_viejo">
                     </table>
                 </p>
-                <!-- <label class="modal_titulos">Comentarios anteriores: </label><br>
-                    <table id="old_comentarios"  class="tabla_comentario_viejo">
-                    </table> -->
             </div> 
-            <div class="comentarios1">
+            <div class="modulo_chiquito">
                 <label class="modal_titulos">Nuevo comentario: </label><br>
                 <input
                     class="cubito1"
@@ -115,7 +144,7 @@
                     type="text"
                     >
             </div>
-            <button class="btnEditarUsuarios" id="btnActualizarComentario">Guardar</button>
+            <button class="btnEditarUsuarios" id="btnActualizarComentarioArqui">Guardar</button>
             <button class="btnCerrarUsuarios" id="btnCerrarUsuarios" onclick="window.modal.close();">Cerrar</button>
         </dialog>
     </body>

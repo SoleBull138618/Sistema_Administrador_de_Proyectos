@@ -27,9 +27,6 @@ function verProyecto(){
         case 'Subir Archivos':
             newSrc = 'views/agregar_archivos.html'
             break;
-        case 'Proyectos':
-            newSrc = 'views/ver_proyecto.html'
-            break;
         case 'Estadisticas':
             newSrc = 'views/estadisticas.html'
             break;

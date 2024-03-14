@@ -235,24 +235,33 @@ dialog::backdrop {
 
 dialog#modal{
     left: 35%;
-    top: 25%;
+    top: 3%;
     background-color: #5daae9;
     border-radius: 15px;
     border: 2px solid rgb(0, 67, 250);
 }
 
 .titulo_modal{
+    display: flex;
     letter-spacing: 1px;
-    padding: 14px;
+    padding: 1px;
     color: white;
-    margin-bottom: 0px;
+    margin-left: 10px;
 }
 
 .modal_titulos{
     color: white;
 }
 
+.titulo_modal_externo{
+    margin: 15px;
+}
 /* h2{
     
 } */
 
+.modulo_chiquito{
+    margin: 13px;
+    /* margin-top: 0px; */
+    /* padding: 3px; */
+}

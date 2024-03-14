@@ -178,6 +178,7 @@
 
     }
 
+    // Evento para actualizar los proyectos del programardor o admin.
     function actualizar_comentario_proyecto(){
 
         $update_avance_actual = $_POST ['update_avance_actual'];
@@ -200,6 +201,31 @@
         print json_encode($salidaJSON);
     }      
 
+    // Evento para actualizar los proyectos del arqui.
+    function actualizar_comentario_proyecto_arqui(){
+
+        $alta_fecha_final = $_POST ['alta_fecha_final'];
+        $update_avance_actual = $_POST ['update_avance_actual'];
+        $estatus_update = $_POST ['estatus_update'];
+        $fecha_compromiso_update = $_POST ['fecha_compromiso_update'];
+        $update_comentarios= $_POST ['update_comentarios'];
+        $old_comentarios= $_POST ['old_comentarios'];
+        $id= $_POST ['id'];
+
+        global $conn;
+        
+        $new_comentario = $old_comentarios.'|'.$update_comentarios;
+
+        $insertarDatos = "UPDATE proyectos_historica SET fecha_final='$alta_fecha_final',avance_actual='$update_avance_actual',estatus='$estatus_update',fecha_compromiso='$fecha_compromiso_update',comentarios='$new_comentario' WHERE id_proyecto='$id'";
+
+        $ejecutarInsertar = mysqli_query ($conn,$insertarDatos);
+
+        $estado = true;
+
+        mysqli_close($conn);
+        $salidaJSON = array('estado' => $estado);
+        print json_encode($salidaJSON);
+    } 
     function FiltrarProyecto(){
 
         $filtrar_servicio = $_POST ['filtrar_servicio'];
