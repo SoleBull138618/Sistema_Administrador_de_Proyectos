@@ -13,17 +13,15 @@ function eventListeners(){
         let parent = this.parentNode;
         let parentRow = $(`#${parent.getAttribute('data-manipulation-button')}`)[0]; //'marco'+name;  "marco"+name; `marco${name}`
 
-        if(this.value == 'Editar'){
-            console.log('Esta editandome')
-
-            fnLlenaId(parentRow.id) //Manda a llenar #id
-
-            window.modal.showModal();
-        }
-        else if(this.value == 'Borrar'){
-
+        if(this.value == 'Borrar'){
             console.log("Esta borrandome")
             $(parentRow).hide()
+
+            let empleado = parentRow.empleado.substring('n'.length);
+            console.log("Empleado")
+        }
+        else if(this.value == 'Editar'){
+            console.log('Esta editandome')
         }
 
     });

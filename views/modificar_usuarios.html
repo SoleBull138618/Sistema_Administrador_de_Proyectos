@@ -14,48 +14,16 @@
                 <div id="usuarios" class="usuarios">
                     <div class="tablilla">
                         <table border="1" id="tabla_usuarios">
-                            <tr>
-                                <td>N° EMPLEADO</td>
-                                <td>NOMBRE</td>
-                                <td>ROL</td>
-                                <td>CLAVE</td>
-                                <td>Opciones</td>
-                            </tr>
+                            <thead>
+                                <th>N° EMPLEADO</th>
+                                <th>NOMBRE</th>
+                                <th>ROL</th>
+                                <th>CLAVE</th>
+                            </thead>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-        <dialog id="modal_usuarios" method="POST" action="../php/funciones.php">
-            <h1 class="titulo_modal">Actualizar Empleado #
-                <table id="ver_id_proyecto" class="titulo_modal">
-                </table>
-            </h1>
-            <div class="rolito">
-                <label>Tipo de rol:</label><br>
-                <input type="radio" 
-                id="agg_rol"
-                name="rol" 
-                checked
-                value="1"> Administrador<br>
-                <input type="radio"
-                id="agg_rol"
-                name="rol"
-                value="2"> Arquitecto<br>
-                <input type="radio"
-                id="agg_rol"
-                name="rol"
-                value="3"> Programador
-            </div>
-            <div class="contra">
-                <label>Contraseña:</label><br>
-                <input
-                    id="contra"
-                    type="text"
-                    required
-                >
-                <button class="btnEditarUsuarios" id="btnActualizarDatos">Guardar</button>
-                <button class="btnCerrarUsuarios" onclick="window.modal.close();">Cerrar</button>
-        </dialog>
     </body>
 </html>

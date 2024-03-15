@@ -132,44 +132,6 @@ function ActualizarComentario(id){
     })
 }
 
-// function ActualizarComentarioArqui(id){
-
-//     let old_comentario =  '';
-
-//     $('#old_comentarios td').each(function(i, e){
-//         old_comentario += e.textContent + '|';
-//     });
-
-//     old_comentario = old_comentario.substring(0, old_comentario.length-1); //Quitamos el ultimo pipe
-    
-
-//     let form_data = new FormData();
-//     form_data.append('opc','actualizar_comentario_proyecto');
-//     form_data.append('alta_fecha_final',$('#alta_fecha_final').val());
-//     form_data.append('update_avance_actual',$('#update_avance_actual').val());
-//     form_data.append('estatus_update',$('#estatus_update').val());
-//     form_data.append('fecha_compromiso_update',$('#fecha_compromiso_update').val());
-//     form_data.append('update_comentarios',$('#update_comentarios').val());
-//     form_data.append('old_comentarios', old_comentario);
-//     form_data.append('id',$('#hiddenId').val());
-
-//     $.ajax({
-//         type: 'POST',
-//         url: '../php/funciones.php',
-//         data: form_data,
-//         dataType: 'json',
-//         processData: false,
-//         contentType: false,
-//         success: function(respuesta) {
-//             console.log('Se actualizo el comentario.')
-//             // console.log(old_comentarios)
-//         },
-//         error: function(xhr, status, error){
-//             console.log(error)
-//         }
-//     })
-// }
-
 function FiltrarProyectos(){
 
     let filtrar_servicio = '';

@@ -86,12 +86,12 @@
 
             while ($row = mysqli_fetch_assoc($result)){
 
-                $html_info .= "<tr #empleado='#{$row['empleado']}'>";
+                $html_info .= "<tr empleado='n{$row['empleado']}'>";
                 $html_info .= "<td>{$row["empleado"]}</td>";
                 $html_info .= "<td>{$row["nombre"]}</td>";
                 $html_info .= "<td>{$row["rol"]}</td>";
                 $html_info .= "<td>{$row["clave"]}</td>";
-                $html_info .= "<td data-manipulation-button='#{$row['empleado']}'><input id='btnBorrarUsuarios' type='button' value='Borrar' class='btnEliminarUsuarios'> <input id='btnEditarUsuarios' type='button' value='Editar' class='btnEditarUsuarios'></td>";
+                // $html_info .= "<td data-manipulation-button='n{$row['empleado']}'><input type='button' value='Borrar' class='btnEliminarUsuarios'></td>";
                 $html_info .= "</tr>";
             }
 
