@@ -35,7 +35,9 @@
         case 'GraficaPorProgramador':
             GraficaPorProgramador();
             break;
-            
+        case 'GraficaPorEstatus':
+            GraficaPorEstatus();
+            break; 
     }
 
     // Evento para guardar el alta de los usuarios. 
@@ -285,7 +287,7 @@
     function GraficaPorProgramador(){
 
         global $conn;
-        $query = "SELECT programador, count(*) FROM `proyectos_historica` GROUP BY 1 ORDER BY 2 DESC;";
+        $query = "SELECT programador, COUNT(*) AS conteo FROM proyectos_historica GROUP BY 1 ORDER BY 2 DESC;";
         $html_info = array();
         $estado = false;
         
@@ -301,6 +303,29 @@
 
         mysqli_close($conn);
         $salidaJSON = array('info_grafica_programador' => $html_info, 'estado' => $estado);
+        print json_encode($salidaJSON);
+        
+    }
+
+    function GraficaPorEstatus(){
+
+        global $conn;
+        $query = "SELECT estatus, COUNT(*) as conteo FROM proyectos_historica GROUP BY 1 ORDER BY 2 DESC;";
+        $html_info = array();
+        $estado = false;
+        
+
+        if($result = mysqli_query($conn, $query)){
+            
+            while($row = mysqli_fetch_assoc($result)){
+                array_push($html_info, array('name' => $row['estatus'], 'y' => intval($row['conteo'])));
+            }
+
+            $estado = true;
+        }
+
+        mysqli_close($conn);
+        $salidaJSON = array('info_grafica_estatus' => $html_info, 'estado' => $estado);
         print json_encode($salidaJSON);
         
     }
