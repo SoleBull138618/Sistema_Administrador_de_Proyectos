@@ -10,8 +10,6 @@ function eventListeners(){
     document.getElementById('btnPrueba').addEventListener('click',verPrueba);
 }
 
-
-
 function verGraficoProgramador(){
     
     var chart1;
@@ -29,7 +27,7 @@ function verGraficoProgramador(){
         },
         yAxis:{
             title:{
-                text: 'Loritos'
+                text: 'Cantidad'
             }
         },
         plotOptions:{
@@ -87,7 +85,7 @@ function verGraficoEstatus(){
         },
         yAxis:{
             title:{
-                text: 'Loritos'
+                text: 'Cantidad'
             }
         },
         plotOptions:{
@@ -145,7 +143,7 @@ function verGraficoServicio(){
         },
         yAxis:{
             title:{
-                text: 'Loritos'
+                text: 'Cantidad'
             }
         },
         plotOptions:{

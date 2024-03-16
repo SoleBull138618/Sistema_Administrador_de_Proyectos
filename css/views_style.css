@@ -283,6 +283,15 @@ dialog#modal{
     /* flex-wrap: wrap; */
 }
 
+.acomodar_filtro_graficos{
+    border: 2px solid;
+    height: 182px;
+    width: 192px;
+    padding: 12px;
+    top: -89px;
+    position: relative;
+}
+
 /* padding: 8px;
 border-radius: 7px;
 border: none;
