@@ -26,12 +26,16 @@
         case 'actualizar_comentario_proyecto':
             actualizar_comentario_proyecto();
             break;
-        case 'GraficaPorServicio':
-            GraficaPorServicio();
-            break;
         case 'FiltrarProyecto':
             FiltrarProyecto();
             break;
+        case 'GraficaPorServicio':
+            GraficaPorServicio();
+            break;
+        case 'GraficaPorProgramador':
+            GraficaPorProgramador();
+            break;
+            
     }
 
     // Evento para guardar el alta de los usuarios. 
@@ -76,7 +80,7 @@
         $ejecutarInsertar = mysqli_query ($conn,$insertarDatos1);
     }
     
-     // Evento para consultar todos los registros de la tabla usuarios.
+    // Evento para consultar todos los registros de la tabla usuarios.
     function info_tabla_usuarios(){
 
         global $conn;
@@ -275,8 +279,28 @@
         mysqli_close($conn);
         $salidaJSON = array('info_grafica_servicio' => $html_info, 'estado' => $estado);
         print json_encode($salidaJSON);
-        // mysqli_close($conn);
-        // $salidaJSON = array('info_grafica_servicio' => $html_info, 'estado' => $estado);
-        // print json_encode($salidaJSON);
+        
+    }
+
+    function GraficaPorProgramador(){
+
+        global $conn;
+        $query = "SELECT programador, count(*) FROM `proyectos_historica` GROUP BY 1 ORDER BY 2 DESC;";
+        $html_info = array();
+        $estado = false;
+        
+
+        if($result = mysqli_query($conn, $query)){
+            
+            while($row = mysqli_fetch_assoc($result)){
+                array_push($html_info, array('name' => $row['programador'], 'y' => intval($row['conteo'])));
+            }
+
+            $estado = true;
+        }
+
+        mysqli_close($conn);
+        $salidaJSON = array('info_grafica_programador' => $html_info, 'estado' => $estado);
+        print json_encode($salidaJSON);
         
     }

@@ -14,34 +14,26 @@
                 <h1 class="titulo">Estadisticas Del Grupo.</h1>
                 <div class="text-center">
                     <div class="btn-group" role="group" aria-label="">
-                        <button id="btnColumnas" type="button" class="btn btn-secondary">Columnas</button>
-                        <button id="btnLineas" type="button" class="btn btn-primary">Lineas</button>
-                        <button id="btnArea" type="button" class="btn btn-info">Area</button>
-                        <button id="btnTorta" type="button" class="btn btn-dark">Torta</button>
-                        <button id="btnPrueba" type="button" class="btn btn-danger">Gráfico de Pruebas</button>
+                        <button id="btnColumnas" type="button" class="btn_graficos">Columnas</button>
+                        <button id="btnProgramador" type="button" class="btn_graficos">Proyectos por programador</button>
+                        <button id="btnServicio" type="button" class="btn_graficos">Proyectos por servicio</button>
+                        <button id="btnTorta" type="button" class="btn_graficos">Torta</button>
+                        <button id="btnPrueba" type="button" class="btn_graficos">Gráfico de Pruebas</button>
                     </div>
                 </div>
+                <div class="filtros_graficos">
+                    <label class="modal_titulos">Fecha Compromiso:</label><br>
+                    <input
+                        class="cubito1"
+                        id="fecha_compromiso_update"
+                        type="date"
+                        name="fecha_compromiso"   
+                    >
+                </div>
             </div>
-
             <!-- En este container se muestran los graficos -->
             <div id="contenedor" style="min-width: 320px; height: 400px; margin: 0 auto;"></div>
-
-            <!-- Modal para graficos -->
-            <!-- <div id="modal-1" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-title">
-                    <h5 class="modal-title"></h5>
-                    <button type="button" class="close" data-dismis="modal" aria-label="close"><span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body"> -->
-                    <!-- En este container se muestran los graficos -->
-                    <!-- <div id="contenedor-modal" style="min-width: 310px; height: 400px; margin: 0 auto;"></div>
-                </div>
-            </div>
-            </div>
-            </div> -->
+            
         </div>
     </body>
 </html>

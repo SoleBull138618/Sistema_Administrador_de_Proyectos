@@ -4,32 +4,73 @@ window.addEventListener('load', eventListeners);
 
 function eventListeners(){
 
-    document.getElementById('btnColumnas').addEventListener('click',verGrafico);
-    document.getElementById('btnLineas').addEventListener('click',verPrueba);
-    document.getElementById('btnArea').addEventListener('click',verArea);
+    document.getElementById('btnProgramador').addEventListener('click',verGraficoProgramador);
+    // document.getElementById('btnLineas').addEventListener('click',verPrueba);
+    document.getElementById('btnServicio').addEventListener('click',verGraficoServicio);
 
 }
 
-function verGrafico(){
-    // alert("ola");
-    console.log('loritos');
-    Highcharts.chart('contenedor',{
-        chart:{
-            type: 'line'
+
+
+function verGraficoProgramador(){
+    
+    var chart1;
+
+    var options = {
+        chart: {
+            type: 'column',
+            renderTo: 'contenedor',
         },
         title:{
-            text:'Valores mensuales'
+            text: 'Gráfica de Proyectos por Programador.'
         },
         xAxis:{
-            categories:['Ene','Feb','Mar']
+            type: 'category'
+        },
+        yAxis:{
+            title:{
+                text: 'Loritos'
+            }
+        },
+        plotOptions:{
+            series:{
+                borderWidth: 1,
+                dataLabels:{
+                    enabled: true,
+                    format: '{point.y:0f}'
+                }
+            }
+        },
+        tooltip:{
+            headerFormat: "<span style='font-size:11px'>{series.name}</span><br>",
+            pointFormat: "<span style='color:{point.color}'>{point.name}</span>: <b>{point.y:.0f}<b>"
         },
         series:[{
-            data: [2,3,4]
-        }],
-    });
+            name: 'programador',
+            colorByPoint: true,
+            data: []
+        }]
+    };
+
+    let form_data = new FormData();
+    form_data.append('opc','GraficaPorProgramador');
+
+    $.ajax({
+        async: false,
+        type: 'POST',
+        url: '../php/funciones.php',
+        data: form_data,
+        dataType: 'json',
+        processData: false,
+        contentType: false,
+        success: function(result) {
+            options.series[0].data = result.info_grafica_programador;
+            chart1 = new Highcharts.Chart(options);
+        }
+    })
 }
 
-function verPrueba(){
+// function verPrueba(){
     Highcharts.chart('contenedor',{
         xAxis:{
             minPadding: 0.05,
@@ -43,47 +84,47 @@ function verPrueba(){
             ]
         }],
     });
-}
+// }
 
-var chart1;
+function verGraficoServicio(){
 
-var options = {
-    chart: {
-        type: 'column',
-        renderTo: 'contenedor',
-    },
-    title:{
-        text: 'Servicios'
-    },
-    xAxis:{
-        type: 'category'
-    },
-    yAxis:{
+    var chart1;
+
+    var options = {
+        chart: {
+            type: 'column',
+            renderTo: 'contenedor',
+        },
         title:{
-            text: 'Loritos'
-        }
-    },
-    plotOptions:{
-        series:{
-            borderWidth: 1,
-            dataLabels:{
-                enabled: true,
-                format: '{point.y:0f}'
+            text: 'Gráfica de Proyectos por Servicio.'
+        },
+        xAxis:{
+            type: 'category'
+        },
+        yAxis:{
+            title:{
+                text: 'Loritos'
             }
-        }
-    },
-    tooltip:{
-        headerFormat: "<span style='font-size:11px'>{series.name}</span><br>",
-        pointFormat: "<span style='color:{point.color}'>{point.name}</span>: <b>{point.y:.0f}<b>"
-    },
-    series:[{
-        name: 'Servicios',
-        colorByPoint: true,
-        data: []
-    }]
-};
-
-function verArea(){
+        },
+        plotOptions:{
+            series:{
+                borderWidth: 1,
+                dataLabels:{
+                    enabled: true,
+                    format: '{point.y:0f}'
+                }
+            }
+        },
+        tooltip:{
+            headerFormat: "<span style='font-size:11px'>{series.name}</span><br>",
+            pointFormat: "<span style='color:{point.color}'>{point.name}</span>: <b>{point.y:.0f}<b>"
+        },
+        series:[{
+            name: 'Servicios',
+            colorByPoint: true,
+            data: []
+        }]
+    };
 
     let form_data = new FormData();
     form_data.append('opc','GraficaPorServicio');
@@ -101,7 +142,6 @@ function verArea(){
             chart1 = new Highcharts.Chart(options);
         }
     })
-
 
     // Highcharts.chart('contenedor',{
     //     chart:{
