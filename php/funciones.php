@@ -26,6 +26,9 @@
         case 'actualizar_comentario_proyecto':
             actualizar_comentario_proyecto();
             break;
+        case 'GraficaPorServicio':
+            GraficaPorServicio();
+            break;
         case 'FiltrarProyecto':
             FiltrarProyecto();
             break;
@@ -250,4 +253,30 @@
         $salidaJSON = array('info_proyectos' => $html_info, 'estado' => $estado);
         print json_encode($salidaJSON);
 
+    }
+
+    function GraficaPorServicio(){
+
+        global $conn;
+        $query = "SELECT servicio, COUNT(*) as conteo FROM proyectos_historica GROUP by 1 order by 2 desc;";
+        $html_info = array();
+        $estado = false;
+        
+
+        if($result = mysqli_query($conn, $query)){
+            
+            while($row = mysqli_fetch_assoc($result)){
+                array_push($html_info, array('name' => $row['servicio'], 'y' => intval($row['conteo'])));
+            }
+
+            $estado = true;
+        }
+
+        mysqli_close($conn);
+        $salidaJSON = array('info_grafica_servicio' => $html_info, 'estado' => $estado);
+        print json_encode($salidaJSON);
+        // mysqli_close($conn);
+        // $salidaJSON = array('info_grafica_servicio' => $html_info, 'estado' => $estado);
+        // print json_encode($salidaJSON);
+        
     }
