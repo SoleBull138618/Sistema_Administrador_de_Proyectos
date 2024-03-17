@@ -76,10 +76,19 @@
         $arquitecto= $_POST ['arqui'];
         $programador= $_POST ['desarrollador'];
         $fecha_compromiso= $_POST ['fecha_compromiso'];
+        $estatus= $_POST ['estatus'];
         $comentario= $_POST ['comentarios'];
+        
+        $estado = false;
 
-        $insertarDatos1 = "INSERT INTO proyectos_historica VALUES ('','$fecha_registro','$origen_peticion','$servicio','$proyecto','$descripcion','$tipo_proyecto','$clasificacion','$peticion','$arquitecto','$programador','','','','$fecha_compromiso','$comentario')";
+        $insertarDatos1 = "INSERT INTO proyectos_historica VALUES ('','$fecha_registro','$origen_peticion','$servicio','$proyecto','$descripcion','$tipo_proyecto','$clasificacion','$peticion','$arquitecto','$programador','','','$estatus','$fecha_compromiso','$comentario')";
         $ejecutarInsertar = mysqli_query ($conn,$insertarDatos1);
+
+        $estado = true;
+
+        mysqli_close($conn);
+        $salidaJSON = array('estado' => $estado);
+        print json_encode($salidaJSON);
     }
     
     // Evento para consultar todos los registros de la tabla usuarios.
