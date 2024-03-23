@@ -14,11 +14,11 @@ function eventListeners(){
         let parentRow = $(`#${parent.getAttribute('data-manipulation-button')}`)[0]; //'marco'+name;  "marco"+name; `marco${name}`
 
         if(this.value == 'Borrar'){
-            console.log("Esta borrandome")
             $(parentRow).hide()
 
-            let empleado = parentRow.empleado.substring('n'.length);
-            console.log("Empleado")
+            let id = parentRow.id.substring('project_'.length);
+            borrar_usuario(id);
+
         }
         else if(this.value == 'Editar'){
             console.log('Esta editandome')
@@ -45,4 +45,27 @@ function llenaTablaUsuarios(){
         }
     })
 
+}
+
+function borrar_usuario(id){
+
+    let form_data = new FormData();
+    form_data.append('opc','borrar_usuario');
+    form_data.append('id',id);
+
+    $.ajax({
+        async: false,
+        type: 'POST',
+        url: '../php/funciones.php',
+        data: form_data,
+        dataType: 'json',
+        processData: false,
+        contentType: false,
+        success: function(respuesta) {
+            console.log('Se borro el usuario.');
+        }
+        ,error:function(xhr, status, error){
+            console.log(error)
+        }
+    })
 }

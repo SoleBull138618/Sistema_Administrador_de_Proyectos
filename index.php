@@ -65,13 +65,16 @@
                     </div>
                     <div class="campo__contraseña">
                         <input
+                            id="contra_user"
                             type="password"
                             name="password"
                             placeholder="Contraseña"
                             required
                             maxlength="15"
+                            minlength="8"
                         >
                         <img src="imagenes/help-circle-solid-24.png" alt="comentario" title="La contraseña debe tener:
+- Máximo 15 dígitos.
 - Mínimo 8 dígitos.
 - 1 mayuscula y 1 numero." class="i">
                     </div> 

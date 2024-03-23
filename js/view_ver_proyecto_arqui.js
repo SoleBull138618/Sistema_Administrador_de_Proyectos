@@ -8,14 +8,14 @@ function eventListeners(){
 
     $('[data-manipulation-button] input[type=button]').on('click', function(){
 
-        console.log('ola')
-
         let parent = this.parentNode;
         let parentRow = $(`#${parent.getAttribute('data-manipulation-button')}`)[0]; //'marco'+name;  "marco"+name; `marco${name}`
 
         if(this.value == 'Editar'){
             console.log('Esta editandome')
 
+
+            
             let id = parentRow.id.substring('project_'.length);
 
             fnLlenaComentarios(id) //Manda a llenar #update_comentarios
@@ -36,13 +36,12 @@ function eventListeners(){
         $('#hiddenId').val(); //Eliminamos el id oculto a la ventana modal
     });
 
-    // Boton para actualizar el nuevo comentario en la bd.
-    document.getElementById('btnActualizarComentario').addEventListener('click',ActualizarComentario);
-
-    
+    // Boton para actualizar los campos del arqui.
+    document.getElementById('btnActualizarComentario_arqui').addEventListener('click',ActualizarComentarioArqui);
 
     // Boton para filtrar los proyectos.
     document.getElementById('btnFiltrarUsuarios').addEventListener('click',FiltrarProyectos);
+
 }
 
 function llenaTablaVerProyectos(){
@@ -95,7 +94,9 @@ function fnLlenaId(id){
     $("#ver_id_proyecto").html(id);
 }
 
-function ActualizarComentario(id){
+function ActualizarComentarioArqui(){
+
+    
 
     let old_comentario =  '';
 
@@ -107,8 +108,11 @@ function ActualizarComentario(id){
     
 
     let form_data = new FormData();
-    form_data.append('opc','actualizar_comentario_proyecto');
+    form_data.append('opc','actualizar_comentario_proyecto_arqui');
+    form_data.append('alta_fecha_final',$('#alta_fecha_final').val());
     form_data.append('update_avance_actual',$('#update_avance_actual').val());
+    form_data.append('estatus_update',$('#estatus_update').val());
+    form_data.append('fecha_compromiso_update',$('#fecha_compromiso_update').val());
     form_data.append('update_comentarios',$('#update_comentarios').val());
     form_data.append('old_comentarios', old_comentario);
     form_data.append('id',$('#hiddenId').val());

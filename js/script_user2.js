@@ -22,7 +22,7 @@ function verProyecto(){
             newSrc = 'views/alta_proyecto.html'
             break;
         case 'Proyectos':
-            newSrc = 'views/ver_proyecto.html'
+            newSrc = 'views/ver_proyecto_arqui.html'
             break;
         case 'Subir Archivos':
             newSrc = 'views/agregar_archivos.html'

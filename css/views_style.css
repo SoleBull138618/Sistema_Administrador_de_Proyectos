@@ -166,9 +166,16 @@ th{
 }
 
 td{
-    border: 2px solid rgb(0, 0, 0);
+    /* border: 2px solid rgb(0, 0, 0); */
+    border: 2px solid rgb(255, 255, 255);
+    background-color: white;
+    color: black;
     text-align: left;
     padding: 15px;
+}
+
+.comentario_viejo{
+    border-radius: 7px;
 }
 
 .btnEditarUsuarios,

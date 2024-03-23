@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="Last-Modified" content="0">
+        <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../css/views_style.css">	
         <title>Ola</title>
@@ -10,6 +15,7 @@
     <body>
         <div class="contenedor">
             <div class="formulario" method="POST" action="../php/funciones.php">
+                <input id="hiddenId" type="hidden">
                 <h1 class="titulo">Modificar Usuarios</h1>
                 <div id="usuarios" class="usuarios">
                     <div class="tablilla">
@@ -19,6 +25,7 @@
                                 <th>NOMBRE</th>
                                 <th>ROL</th>
                                 <th>CLAVE</th>
+                                <th>Opciones</th>
                             </thead>
                         </table>
                     </div>
