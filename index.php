@@ -50,7 +50,7 @@
     <body>
         <!-- Login -->
         <div class="contenedor">
-            <form class="formulario" method="POST">
+            <div class="formulario">
                 <h1 class="titulo">Bienvenido</h1>
                 <div class="campos">
                     <div class="campo__usuarios">
@@ -80,6 +80,6 @@
                     </div> 
                     <input type="submit" value="Login">
                 </div>
-            </form>
+            </div>
     </body>
 </html>

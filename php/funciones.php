@@ -110,12 +110,12 @@
 
             while ($row = mysqli_fetch_assoc($result)){
 
-                $html_info .= "<tr empleado='n{$row['empleado']}'>";
+                $html_info .= "<tr id='project_{$row['empleado']}'>";
                 $html_info .= "<td>{$row["empleado"]}</td>";
                 $html_info .= "<td>{$row["nombre"]}</td>";
                 $html_info .= "<td>{$row["rol"]}</td>";
                 $html_info .= "<td>{$row["clave"]}</td>";
-                // $html_info .= "<td data-manipulation-button='n{$row['empleado']}'><input type='button' value='Borrar' class='btnEliminarUsuarios'></td>";
+                $html_info .= "<td data-manipulation-button='project_{$row['empleado']}'><input type='button' value='Borrar' class='btnEliminarUsuarios'></td>";
                 $html_info .= "</tr>";
             }
 
@@ -189,7 +189,7 @@
 
                 foreach ($allComentarios as $newRow) {
                     $html_info .= "<tr>";
-                    $html_info .= "<td>{$newRow}</td>";
+                    $html_info .= "<td class='comentario_viejo'>{$newRow}</td>";
                     $html_info .= "</tr>";
                 }
 
