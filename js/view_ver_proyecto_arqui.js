@@ -14,8 +14,6 @@ function eventListeners(){
         if(this.value == 'Editar'){
             console.log('Esta editandome')
 
-
-            
             let id = parentRow.id.substring('project_'.length);
 
             fnLlenaComentarios(id) //Manda a llenar #update_comentarios

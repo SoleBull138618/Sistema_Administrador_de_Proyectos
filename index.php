@@ -33,7 +33,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_var($_POST['username'], FILT
                 exit;
                 break;
         }
-    }
+    }else{
+        echo'<div class="acceso_denegado">ACCESO DENEGADO</div>';
+    };
 }
 ?>
 
@@ -68,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_var($_POST['username'], FILT
                 </div>
                 <input type="submit" value="Login">
             </div>
-</form>
+        </form>
 </body>
 
 </html>

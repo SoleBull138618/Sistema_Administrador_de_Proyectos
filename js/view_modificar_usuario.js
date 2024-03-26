@@ -14,6 +14,7 @@ function eventListeners(){
         let parentRow = $(`#${parent.getAttribute('data-manipulation-button')}`)[0]; //'marco'+name;  "marco"+name; `marco${name}`
 
         if(this.value == 'Borrar'){
+            console.log("Esta borrandome")
             $(parentRow).hide()
 
             let id = parentRow.id.substring('project_'.length);
