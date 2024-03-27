@@ -8,7 +8,7 @@ function eventListeners(){
     document.getElementById('btnEstatus').addEventListener('click',verGraficoEstatus);
     document.getElementById('btnServicio').addEventListener('click',verGraficoServicio);
     // document.getElementById('btnPrueba').addEventListener('click',verPrueba);
-}
+} 
 
 function verGraficoProgramador(){
     
