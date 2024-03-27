@@ -53,7 +53,7 @@ function validaFormulario(){
         return false;
     }
 
-}
+} 
 
 function logeaUsuario(){
 
