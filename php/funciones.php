@@ -376,7 +376,7 @@
         print json_encode($salidaJSON);
         
     }
-
+ 
     function borrar_usuario(){
        
         $id= $_POST ['id'];
