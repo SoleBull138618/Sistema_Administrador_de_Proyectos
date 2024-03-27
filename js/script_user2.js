@@ -10,7 +10,7 @@ function eventListeners(){
     document.getElementById('btnProyectos').addEventListener('click',verProyecto);
     document.getElementById('btnEstadisticas').addEventListener('click',verProyecto);
     
-}
+} 
 
 function verProyecto(){
     
