@@ -30,7 +30,7 @@ function eventListeners(){
             $(parentRow).hide()
         }
 
-    });
+    }); 
 
     document.getElementById('btnCerrarUsuarios').addEventListener('click',function(){
         $('#hiddenId').val(); //Eliminamos el id oculto a la ventana modal
