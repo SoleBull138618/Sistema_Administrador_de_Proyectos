@@ -33,8 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_var($_POST['username'], FILT
                 exit;
                 break;
         }
-    }else{
-        echo'<div class="acceso_denegado">ACCESO DENEGADO</div>';
+    } else {
+        echo '<div class="acceso_denegado">ACCESO DENEGADO</div>';
     };
 }
 ?>
@@ -47,7 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_var($_POST['username'], FILT
     <link rel="stylesheet" type="text/css" href="css/index_style.css">
     <title>Ola</title>
 
-    <!-- <script src="script.js"></script> -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/index.js"></script>
 
 </head>
 
@@ -58,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_var($_POST['username'], FILT
             <h1 class="titulo">Bienvenido</h1>
             <div class="campos">
                 <div class="campo__usuarios">
-                    <input name="username" type="number" placeholder="N° Empleado" required onkeydown="if(this.value.length==8) return false">
+                    <input id="username" name="username" type="text" placeholder="N° Empleado" maxlength="8" required onlyNumber>
                     <!-- <img src="imagenes/user.png" alt="titulo" class="i_user"> -->
                 </div>
                 <div class="campo__contraseña">
@@ -68,7 +69,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_var($_POST['username'], FILT
 - Mínimo 8 dígitos.
 - 1 mayuscula y 1 numero." class="i">
                 </div>
-                <input type="submit" value="Login">
+                <input id="btnValidaDatos" type="button" value="Validar">
+                <input id="btnSubmit" type="submit" value="Login" style="display: none;">
             </div>
         </form>
 </body>

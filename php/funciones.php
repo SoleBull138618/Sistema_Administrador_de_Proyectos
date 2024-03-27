@@ -43,7 +43,13 @@
             break;
         case 'borrar_usuario':
             borrar_usuario();
-            break;  
+            break;
+        case 'logeaUsuario':
+            logeaUsuario();
+            break;
+        case 'validaUser':
+            validaUser();
+            break;
     }
 
     // Evento para guardar el alta de los usuarios. 
@@ -386,4 +392,73 @@
         mysqli_close($conn);
         $salidaJSON = array('estado' => $estado);
         print json_encode($salidaJSON);
+    }
+
+    function logeaUsuario(){
+
+        session_start();
+
+        global $conn;
+
+        $username = $_POST['username'];
+        $contrasenia = $_POST['contrasenia'];
+
+        $estado = false;
+        $mensaje = 'No se logró iniciar sesión. Valida usuario y contraseña.';
+
+        $sQuery = "SELECT empleado, rol FROM users WHERE empleado = '$username' AND clave = '$contrasenia';";
+        
+        try{
+
+            if(!$result = mysqli_query($conn, $sQuery)){
+                throw new Exception('Error al ejecutar query');
+            }
+
+            if(!$row = mysqli_fetch_assoc($result)){
+                throw new Exception('Error al obtener la informacion del usuario');
+            }
+
+            if(mysqli_num_rows($result) > 0){
+                $estado = true;
+                $mensaje = 'Se inició sesión con exito.';
+
+                $_SESSION['username'] = $username;
+                $_SESSION['user_type'] = $row['rol'];
+            }
+
+        }catch(Exception $e){
+            echo $e->getMessage();
+        }
+
+        mysqli_close($conn);
+        $salidaJson = array('estado' => $estado, 'mensaje' => $mensaje);
+        print json_encode($salidaJson);
+
+    }
+
+    function validaUser(){
+        
+        session_start();
+        
+        $estado = false;
+        $pagina = '';
+
+        if($_SESSION['username']){
+            
+            switch ($_SESSION['user_type']) {
+                case '1':
+                    $pagina = 'user1.php';
+                    break;
+                case '2':
+                    $pagina = 'user2.php';
+                    break;
+                case '3':
+                    $pagina = 'user3.php';
+                    break;
+            }
+        }
+
+        $salidaJson = array('estado' => $estado, 'pagina' => $pagina);
+        print json_encode($salidaJson);
+
     }

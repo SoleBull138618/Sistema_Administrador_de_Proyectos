@@ -4,8 +4,14 @@ window.addEventListener('load', eventListeners);
 
 function eventListeners(){
 
-    // document.getElementById('contra_user').addEventListener('keyup',validacion_contra);
-    // $('input[type=submit]').on('click', validaFormulario);
+    document.getElementById('contra_user').addEventListener('keyup',validacion_contra);
+    $('#btnValidaDatos').on('click', validaFormulario);
+
+    $('[onlyNumber]').on('keydown', e => {
+    
+        let regex = new RegExp('[0-9]');
+        return regex.test(e.key) || e.key == 'Backspace' || e.key == "Tab";
+    });
 }
 
 function validacion_contra(e){
@@ -41,7 +47,40 @@ function validaFormulario(){
 
 
     if(isOk){
-        console.log('simona')
+        logeaUsuario();
+    }else{
+        alert('Te faltan datos por llenar');
+        return false;
     }
+
+}
+
+function logeaUsuario(){
+
+    let form_data = new FormData();
+    form_data.append('opc', 'logeaUsuario');
+    form_data.append('username', $('#username').val());
+    form_data.append('contrasenia', $('#contra_user').val());
+
+    $.ajax({
+        async: false,
+        type: 'POST',
+        url: 'php/funciones.php',
+        data: form_data,
+        dataType: 'json',
+        processData: false,
+        contentType: false,
+        success: function(data) {
+            alert(data.mensaje);
+            
+            if(data.estado){
+                $('#btnSubmit').show();
+                $('#btnValidaDatos').hide();
+            }
+        },
+        error: function(xhr, status, error){
+            console.log(error);
+        }
+    });
 
 }

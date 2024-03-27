@@ -2,8 +2,6 @@
 
 $(document).ready(eventListeners);
 
-// window.addEventListener('load', eventListeners);
-
 function eventListeners(){
 
     llenaTablaUsuarios();
@@ -15,7 +13,6 @@ function eventListeners(){
 
         if(this.value == 'Borrar'){
             $(parentRow).hide()
-
             let id = parentRow.id.substring('project_'.length);
             borrar_usuario(id);
 
@@ -33,6 +30,7 @@ function llenaTablaUsuarios(){
     form_data.append('opc','info_tabla_usuarios');
 
     $.ajax({
+        async: false,
         type: 'POST',
         url: '../php/funciones.php',
         // data: {opc: "info_tabla_usuarios"},

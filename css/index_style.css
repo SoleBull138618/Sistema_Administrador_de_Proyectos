@@ -93,6 +93,7 @@ input:not(input[type="submit"]):focus ~ i{
     letter-spacing: .5px;
 }
 
+input[type="button"],
 input[type="submit"] {
     color: #1A5276;
     font-size: 18px;
@@ -102,6 +103,7 @@ input[type="submit"] {
     text-transform: uppercase;
 }
 
+input[type="button"]:hover,
 input[type="submit"]:hover {
     color:white;
     background-color: #154360;
