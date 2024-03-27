@@ -66,4 +66,4 @@ function borrar_usuario(id){
             console.log(error)
         }
     })
-}
+} 
