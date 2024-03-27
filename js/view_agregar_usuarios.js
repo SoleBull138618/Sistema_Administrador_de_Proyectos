@@ -28,7 +28,8 @@ function registrarUsuarios(){
         processData: false,
         contentType: false,
         success: function(respuesta) {
-            console.log('Se registro el usuario.')
+            console.log('Se registro el usuario');
+
         },
         error: function(xhr, status, error){
             console.log(error)
